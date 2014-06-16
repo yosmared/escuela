@@ -1,0 +1,14 @@
+{% extends 'EscuelaCommonsBundle:Base:new-base.html.twig'  %}
+
+{# Page title and heading	 #}
+{% set page_title="form.user.title" %}
+
+{% block form_fields %}
+	{% set form_object= form %}
+	{% include 'EscuelaUserManagerBundle:Users:new-edit-fields.html.twig' %}
+{% endblock %}
+
+{% block action_buttons %}
+	{% set cancel_url= path('user_list') %}
+	{{ parent() }}
+{% endblock %}			

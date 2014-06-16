@@ -1,0 +1,28 @@
+#### QuestionGroup ####
+
+# List
+'questiongroup.unassigned_user': Unassigned
+'questiongroup.field.alias': Alias
+'questiongroup.field.lastedit': Last Edit
+'questiongroup.field.assigned_questions': Assigned Questions
+'questiongroup.field.user': User(s)
+'questiongroup.show.title': Question Group Detail
+'questiongroup.field.questions': Questions
+
+# Create
+'form.questiongroup.create.title': Create Question Group
+'form.questiongroup.name': Alias
+'form.questiongroup.placeholder.name': Short name for question group
+'questiongroup.question.suggest.title': Question List
+'questiongroup.questionsid.placeholder.empty': Select questions
+'questiongroup.questionsid.no_suggestions': No suggestions
+'questiongroup.questiongroupid.placeholder.empty': Fill in question group
+'questiongroup.questiongroup.suggest.title': Questions groups
+
+# Edit
+'form.questiongroup.edit.title': Edit Question Group
+'form.questiongroup.edit.already_exists': This question group alias: "%name%" is registered, please choose another one
+
+#Messages
+'questiongroup.no_questiongroup': No question group assigned
+'questiongroup.no_question': No questions assigned

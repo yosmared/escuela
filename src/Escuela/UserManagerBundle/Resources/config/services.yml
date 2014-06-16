@@ -1,0 +1,58 @@
+parameters:
+    escuela_usermanager.base.class: Escuela\UserManagerBundle\Services\BaseService
+    escuela_usermanager.user.class: Escuela\UserManagerBundle\Services\UserService
+    escuela_usermanager.roles.class: Escuela\UserManagerBundle\Services\RolesService
+    escuela_usermanager.acl.class: Escuela\UserManagerBundle\Services\AclService
+    security.acl.voter.class: Escuela\UserManagerBundle\Services\AclVoterService
+    escuela_usermanager.localelistener.class: Escuela\UserManagerBundle\EventListener\LocaleListener
+
+services:
+    request:
+        scope: request
+        synthetic: true
+        synchronized: true
+        
+    escuela.usermanager.base:
+        class: Escuela\UserManagerBundle\Services\BaseService
+        arguments: ["@doctrine.orm.entity_manager","@knp_paginator","@translator"]
+                     
+    escuela.usermanager.form.type.user:
+         class: Escuela\UserManagerBundle\Form\UserType
+         tags:
+             - { name: form.type, alias: user }
+             
+    escuela.usermanager.user:
+        class: %escuela_usermanager.user.class%
+        parent: escuela.usermanager.base
+        calls:
+            - [setDependenciesInyectionUser,["@?request=","@form.factory","@escuela.usermanager.form.type.user","@router","@security.encoder_factory","@gedmo.listener.loggable"]]
+            
+    escuela.usermanager.form.type.roles:
+         class: Escuela\UserManagerBundle\Form\RolesType
+         tags:
+             - { name: form.type, alias: roles }
+             
+    security.acl.voter.basic_permissions:
+        class: %security.acl.voter.class%
+        arguments: ["@security.acl.provider","@security.acl.object_identity_retrieval_strategy","@security.acl.security_identity_retrieval_strategy","@security.acl.permission.map","@logger","true"]
+        public: false
+        tags:
+            - { name: security.voter, priority: 255 }
+            - { name: monolog.logger, channel: security }
+        
+    escuela.usermanager.acl:
+        class: %escuela_usermanager.acl.class%
+        calls:
+            - [setDependenciesInyection,["@service_container"]]
+            
+    escuela.usermanager.roles:
+        class: %escuela_usermanager.roles.class%
+        parent: escuela.usermanager.base
+        calls:
+            - [setDependenciesInyectionRole,["@?request=","@form.factory","@escuela.usermanager.form.type.roles","@router","@escuela.usermanager.acl"]]
+
+   # escuela.softodonto.localelistener:
+   #     class: %escuela_usermanager.localelistener.class%
+   #     arguments: ["%kernel.default_locale%"]
+   #     tags:
+   #         - { name: kernel.event_subscriber }

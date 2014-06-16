@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            
+            <trans-unit id="2">
+                <source>username</source>
+                <target>Username</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>remember.me</source>
+                <target>Remember me</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>forgot.password</source>
+                <target>Forgot your password?</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>login</source>
+                <target>Log In</target>
+            </trans-unit>
+            
+            <trans-unit id="bad.credentials">
+                <source>Bad credentials</source>
+                <target>The username and / or password are incorrect, check and try again</target>
+            </trans-unit>
+            
+            <trans-unit id="userisdisable">
+                <source>User account is disabled.</source>
+                <target>The user account is disabled. Contact the administrator</target>
+            </trans-unit>
+            
+            <trans-unit id="userisdeleted">
+                <source>User account has expired.</source>
+                <target>The user account do not exist</target>
+            </trans-unit>
+            
+            <trans-unit id="userdontexist">
+                <source>userdontexist</source>
+                <target>The user account do not exist</target>
+            </trans-unit>
+            
+        </body>
+    </file>
+</xliff>

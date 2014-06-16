@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+       		
+           
+            <!-- TextArea Search -->
+            
+            <trans-unit id="list.search.text">
+                <source>list.search.text</source>
+                <target>Search...</target>
+            </trans-unit>
+            
+            <!-- Button add -->
+            
+            <trans-unit id="list.button.add">
+                <source>list.button.add</source>
+                <target>Add</target>
+            </trans-unit>
+            
+            <!-- Button delete -->
+            <trans-unit id="list.button.delete">
+                <source>list.button.delete</source>
+                <target>Delete</target>
+            </trans-unit>
+            
+             <!-- Fields Generic Roles -->
+            <trans-unit id="list.field.actions">
+                <source>list.field.actions</source>
+                <target>Actions</target>
+            </trans-unit>
+            <!-- messages -->
+            <trans-unit id="list.message.noentities.noadd">
+                <source>list.message.noentities.noadd</source>
+                <target>No elements to show</target>
+            </trans-unit>
+            <trans-unit id="list.message.noentities.first">
+                <source>list.message.noentities.first</source>
+                <target>No elements to show, you can add a new one</target>
+            </trans-unit>
+            <trans-unit id="list.message.noentities.second">
+                <source>list.message.noentities.second</source>
+                <target>here</target>
+            </trans-unit>
+            
+            <trans-unit id="list.message.noprice">
+                <source>list.message.noprice</source>
+                <target>No price specified</target>
+            </trans-unit>
+            
+            <!-- Fields Roles -->
+            <trans-unit id="list.role.field.name">
+                <source>list.role.field.name</source>
+                <target>Name</target>
+            </trans-unit>
+            
+            <trans-unit id="list.role.field.description">
+                <source>list.role.field.description</source>
+                <target>Description</target>
+            </trans-unit>
+            
+            <!-- Fields User -->
+            <trans-unit id="list.user.field.name">
+                <source>list.user.field.name</source>
+                <target>Name</target>
+            </trans-unit>
+            
+            <trans-unit id="list.user.field.username">
+                <source>list.user.field.username</source>
+                <target>Username</target>
+            </trans-unit>
+            
+            <trans-unit id="list.user.field.role">
+                <source>list.user.field.role</source>
+                <target>Role</target>
+            </trans-unit>
+            
+            <!-- Fields treatments -->
+             <trans-unit id="list.treatment.field.name">
+                <source>list.treatment.field.name</source>
+                <target>Name</target>
+            </trans-unit>
+            
+            <trans-unit id="list.treatment.field.currentprice">
+                <source>list.treatment.field.currentprice</source>
+                <target>Current Price</target>
+            </trans-unit>
+            
+            <!-- Question -->
+            <trans-unit id="list.question.alias">
+                <source>list.question.alias</source>
+                <target>Alias</target>
+            </trans-unit>            
+            <trans-unit id="list.question.text">
+                <source>list.question.text</source>
+                <target>Question Text</target>
+            </trans-unit>
+
+            <!-- Fields Patient -->
+             <trans-unit id="list.patient.field.identification">
+                <source>list.patient.field.identification</source>
+                <target>Identification</target>
+            </trans-unit>
+            
+            <trans-unit id="list.patient.field.namecomplete">
+                <source>list.patient.field.namecomplete</source>
+                <target>Name and Lastname</target>
+            </trans-unit>
+            
+            <trans-unit id="list.patient.field.lastcheck">
+                <source>list.patient.field.lastcheck</source>
+                <target>Last Check</target>
+            </trans-unit>
+            <!-- Tooltip -->
+            <trans-unit id="list.tooltip.detail">
+                <source>list.tooltip.detail</source>
+                <target>Detail</target>
+            </trans-unit>
+            <trans-unit id="list.tooltip.edit">
+                <source>list.tooltip.edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            
+            <trans-unit id="list.tooltip.delete">
+                <source>list.tooltip.delete</source>
+                <target>Delete</target>
+            </trans-unit>
+
+            <trans-unit id="list.tooltip.export">
+                <source>list.tooltip.export</source>
+                <target>Export</target>
+            </trans-unit>
+            
+            <trans-unit id="list.tooltip.lock">
+                <source>list.tooltip.lock</source>
+                <target>Lock</target>
+            </trans-unit>
+            
+            <trans-unit id="list.tooltip.unlock">
+                <source>list.tooltip.unlock</source>
+                <target>Unlock</target>
+            </trans-unit>
+
+        	<!-- Fields Electronic Journal -->
+            <trans-unit id="list.electronicjournal.field.action">
+                <source>list.electronicjournal.field.action</source>
+                <target>Action</target>
+            </trans-unit>
+            <trans-unit id="list.electronicjournal.field.module">
+                <source>list.electronicjournal.field.module</source>
+                <target>Module Name</target>
+            </trans-unit>
+            <trans-unit id="list.electronicjournal.field.date">
+                <source>list.electronicjournal.field.date</source>
+                <target>Date</target>
+            </trans-unit>
+            <trans-unit id="list.electronicjournal.field.username">
+                <source>list.electronicjournal.field.username</source>
+                <target>Username</target>
+            </trans-unit>
+            <trans-unit id="list.electronicjournal.search.general">
+                <source>list.electronicjournal.search.general</source>
+                <target>General search</target>
+            </trans-unit>
+            
+            <trans-unit id="list.electronicjournal.search.date">
+                <source>list.electronicjournal.search.date</source>
+                <target>By date</target>
+            </trans-unit>
+            
+            <trans-unit id="list.electronicjournal.date.from">
+                <source>list.electronicjournal.date.from</source>
+                <target>From</target>
+            </trans-unit>
+            
+            <trans-unit id="list.electronicjournal.date.to">
+                <source>list.electronicjournal.date.to</source>
+                <target>To</target>
+            </trans-unit>
+
+            <trans-unit id="list.odontogram.field.day">
+                <source>list.odontogram.field.day</source>
+                <target>Historic</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

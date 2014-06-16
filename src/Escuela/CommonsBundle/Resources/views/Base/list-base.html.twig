@@ -1,0 +1,138 @@
+{% extends 'EscuelaCommonsBundle::layout.html.twig' %}
+{% block content %}
+{{ parent()}}
+<div id="main-content" class="col-md-9 well">
+
+{# Sets form header using page_title variable inside each entity view #}
+<h2>{{ page_title|trans }}</h2>
+{{ form_start(list_form, {'attr': {'id': 'main-form'}}) }}
+	<div id="upper-toolkit" class="container">
+		<div class="row">
+			<div id="lookup" class="col-md-6">
+			{% block entity_search %}{% trans_default_domain "lists" %}
+			
+				<div class="input-group margin-bottom-sm">
+				{% if app.request.get("phrase")!="" %}
+					{{ form_widget(list_form.phrase, {'attr': {'class': 'form-control', 'placeholder': 'list.search.text'|trans,'value':app.request.get("phrase")}}) }}
+				{% else %}
+				  	{{ form_widget(list_form.phrase, {'attr': {'class': 'form-control', 'placeholder': 'list.search.text'|trans}}) }}
+				{% endif %}
+					<span id="span_search" class="input-group-addon">
+						<i class="fa fa-search fa-border"></i>
+					</span>
+				</div>
+			{% endblock %}
+			</div>
+
+			<div id="add-del" class="col-md-6">
+				{% block entity_add_del %}{% endblock %}
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			{% set current_page= app.request.get('page',1) %}
+			{% if entities is defined and entities|length >  0 %}
+	
+				<table id="entity-list" class="table table-hover">
+					<thead>
+						
+						{% block entity_fieldnames %}{% endblock %}
+						
+					</thead>
+					<tbody>
+
+						{% block entity_fields %}{% endblock %}
+
+					</tbody>
+				</table>
+			
+			{% else %}
+                {% block no_results %}
+                    <div id="noentities" class="container">
+                        <h5>
+                            {% if is_granted('CREATE',service) %}
+                                {{ "list.message.noentities.first"|trans({},"lists") }} <a href="{{ new_path }}">{{ "list.message.noentities.second"|trans({}, "lists") }}</a>
+                            {% else %}
+                                {{ "list.message.noentities.noadd"|trans({},"lists") }}
+                            {% endif %}
+                        </h5>
+                        </div>
+                {% endblock %}
+
+			{% endif %}
+
+		</div>
+	</div>
+	<div class="hidden">{{ form_rest(list_form) }}</div>	
+{{ form_end(list_form) }}
+	
+	{# Modal dialog #}
+	{% block modal_dialog %}
+	    {% include "EscuelaCommonsBundle::modal_list.html.twig" %} 
+	{% endblock %}
+
+
+</div>
+
+
+
+{% block search_javascript %}
+<script type="text/javascript">
+$(document).ready(function() {
+	// searching
+	$("#escuela_list_phrase").keydown(function(e){
+		var phrase = $("#escuela_list_phrase").val().trim();
+
+		if(e.which == 13) {//Enter key pressed
+			if (phrase.length > 0) {
+				search(phrase);
+			} else {
+				e.preventDefault(); // Prevent form submission
+			}
+		}
+	});
+
+    $("#span_search").click(function(e){
+    	var phrase = $("#escuela_list_phrase").val().trim();
+    	if (phrase.length > 0) {
+	   		search(phrase);
+    	}
+    });
+
+	function search(phrase) {
+		var action = '{{ search }}';
+		$("#main-form").attr("action", action + "/" + phrase.toLowerCase());
+		$('#main-form').submit();
+    }
+	
+    // Shows modal dialog if delete all button was pressed
+	$("#escuela_list_deleteall_btn").click(function(e){
+		var numberOfChecked = $('input:checkbox:checked').length;
+		if (numberOfChecked == 0) {
+			$('#alertModal').modal();
+		}else{
+			$('#confirmModal').modal();
+		}
+	});
+
+	// Submits form if confirm button was pressed
+	$("#btn-confirm").click(function(e){
+		$("#main-form").submit();
+	});
+
+	// Redirects to an action the confirm button
+	$("#action-list [name='delete_action']").click(function(e){		
+		var url= $(this).attr("href");
+		$('#confirmModalSingle').modal();
+		$('#confirmModalSingle #btn-confirm').click (function(e){ 
+			location.href= url;
+ 		});
+		e.preventDefault();
+	});
+});
+
+</script>
+{% endblock %}
+
+{% endblock %}

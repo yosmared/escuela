@@ -1,0 +1,106 @@
+{% extends 'EscuelaCommonsBundle:Base:show-base.html.twig' %}
+
+{# Page title and heading  #}
+
+{% set page_title="form.role.show.title" %}
+
+{% block entity_details %}
+{% trans_default_domain "forms" %}
+
+<div class="row">
+	<div class="col-md-4"><strong>{{ "form.role.name"|trans }}:</strong></div>
+	<div class="col-md-8">{{ entity.name|trans }}</div>
+</div>
+<div class="row">
+	<div class="col-md-4"><strong>{{ "form.role.description"|trans }}:</strong></div>
+	<div class="col-md-8">{{ entity.description|trans }}</div>
+</div>
+<div class="row">
+	<div class="col-md-12">&nbsp;</div>
+</div>
+<style>
+.col-md-5 {
+	width: 40%;
+	padding-right: 0px;
+}
+.col-md-7 {
+	padding-left: 0px;
+	text-align: center;
+}
+.col-md-2 {
+	width: 12%;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+</style>
+<div class="row">
+	<div class="col-md-12"><strong>{{ 'form.role.title.manage.permission'|trans }}</strong></div>
+</div>
+<div class="row">
+	<div class="col-md-5"><strong>{{ "form.role.servicename"|trans }}</strong></div>
+	<div class="col-md-7"><strong>{{ "form.role.permissions"|trans }}</strong></div>
+</div>
+<div class="row">
+	<div class="col-md-5"></div>
+	<div class="col-md-2"><strong>{{ "form.role.permission.view"|trans }}</strong></div>
+	<div class="col-md-2"><strong>{{ "form.role.permission.edit"|trans }}</strong></div>
+	<div class="col-md-2"><strong>{{ "form.role.permission.create"|trans }}</strong></div>
+	<div class="col-md-2"><strong>{{ "form.role.permission.delete"|trans }}</strong></div>
+	<div class="col-md-2"><strong>{{ "form.role.permission.all"|trans }}</strong></div>
+</div>
+
+	{% set prefix = "softclear_usermanager_modules" %}
+	{% for m in modules %}
+		{% set module = m.module %}
+		{% set bitmask=m.bitmask %}
+		{% set edit="" %}
+		{% set view="" %}
+		{% set delete="" %}
+		{% set create="" %}
+		{% set owner="" %}
+		{% for bit in bitmask %}
+			{% if bit==4 %}
+				{% set edit="checked" %}
+			{% endif %}
+			{% if bit==1 %}
+				{% set view="checked" %}
+			{% endif %}
+			{% if bit==8 %}
+				{% set delete="checked" %}
+			{% endif %}
+			{% if bit==2 %}
+				{% set create="checked" %}
+			{% endif %}
+			{% if bit==128 %}
+				{% set owner="checked" %}
+			{% endif %}
+		{% endfor %}
+<div class="row">
+	<div class="col-md-5">{{ module.servicename }}</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_view" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]" }}" value="1" {{ view }} disabled="disabled"/>
+	</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_edit" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]" }}" value="4" {{ edit }} disabled="disabled"/>
+	</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_create" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]"  }}" value="2" {{ create }} disabled="disabled"/>
+	</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_delete" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]"  }}" value="8" {{ delete }} disabled="disabled"/>
+	</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_owner" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]"  }}" value="128" {{ owner }} disabled="disabled"/>
+	</div>
+</div>
+	{% endfor %}
+
+{% endblock %}
+
+{# Edit button url #}
+{% if is_granted('EDIT',service) %}
+	{% set edit_url= path('roles_edit', { 'id': entity.id }) %}
+{% endif %} 
+
+{# Back button url #}
+{% set back_url= path('roles_list') %}

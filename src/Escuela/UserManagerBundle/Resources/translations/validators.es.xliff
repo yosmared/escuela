@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="roles.name.not_blank">
+                <source>roles.name.not_blank</source>
+                <target>Ingrese un nombre de rol.</target>
+            </trans-unit>
+            <trans-unit id="roles.name.regex">
+                <source>roles.name.regex</source>
+                <target>Use sólo caracteres alfanuméricos sin espacios.</target>
+            </trans-unit>
+            <trans-unit id="roles.name.max">
+                <source>roles.name.max</source>
+                <target>Coloque hasta 20 caracteres alfanuméricos.</target>
+            </trans-unit>
+            <trans-unit id="roles.description.max">
+                <source>roles.description.max</source>
+                <target>Coloque hasta 255 caracteres alfanuméricos.</target>
+            </trans-unit>
+            <trans-unit id="questions.name.not_blank">
+                <source>questions.name.not_blank</source>
+                <target>Ingrese un alias de pregunta válido.</target>
+            </trans-unit>
+            <trans-unit id="questions.name.regex">
+                <source>questions.name.regex</source>
+                <target>Use sólo caracteres alfanuméricos sin espacios.</target>
+            </trans-unit>
+            <trans-unit id="questions.name.max">
+                <source>questions.name.max</source>
+                <target>Coloque hasta 20 caracteres alfanuméricos.</target>
+            </trans-unit>
+            <trans-unit id="questions.question.not_blank">
+                <source>questions.question.not_blank</source>
+                <target>Ingrese una pregunta válida.</target>
+            </trans-unit>
+            <trans-unit id="questions.question.max">
+                <source>questions.question.max</source>
+                <target>Coloque hasta 255 caracteres alfanuméricos.</target>
+            </trans-unit>
+            <trans-unit id="questions.type.not_blank">
+                <source>questions.type.not_blank</source>
+                <target>Seleccione un tipo de pregunta.</target>
+            </trans-unit>
+            <trans-unit id="questiongroup.name.not_blank">
+                <source>questiongroup.name.not_blank</source>
+                <target>Ingrese un alias de grupo de pregunta.</target>
+            </trans-unit>
+            <trans-unit id="questiongroup.name.regex">
+                <source>questiongroup.name.regex</source>
+                <target>Ingrese un alias de grupo de pregunta válido.</target>
+            </trans-unit>
+            <trans-unit id="questiongroup.name.max">
+                <source>questiongroup.name.max</source>
+                <target>No más de 20 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="form.questiongroup.edit.already_exists">
+                <source>form.questiongroup.edit.already_exists</source>
+                <target>Ya se encuentra registrado, seleccione otro</target>
+            </trans-unit>
+            <trans-unit id="questiongroup.questionsid.not_blank">
+                <source>questiongroup.questionsid.not_blank</source>
+                <target>Seleccione al menos una pregunta de la lista.</target>
+            </trans-unit>
+            <trans-unit id="questiongroup.questionsGroup.not_blank">
+                <source>questiongroup.questionsGroup.not_blank</source>
+                <target>Seleccione al menos un grupo de preguntas de la lista.</target>
+            </trans-unit>
+            <trans-unit id="user.name.not_blank">
+                <source>user.name.not_blank</source>
+                <target>Ingrese un nombre válido.</target>
+            </trans-unit>
+            <trans-unit id="user.name.regex">
+                <source>user.name.regex</source>
+                <target>Ingrese un nombre válido usando letras y espacios.</target>
+            </trans-unit>
+            <trans-unit id="user.name.max">
+                <source>user.name.max</source>
+                <target>Coloque hasta 255 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="user.lastname.not_blank">
+                <source>user.lastname.not_blank</source>
+                <target>Ingrese un apellido válido.</target>
+            </trans-unit>
+            <trans-unit id="user.lastname.regex">
+                <source>user.lastname.regex</source>
+                <target>Ingrese un apellido válido usando letras y espacios.</target>
+            </trans-unit>
+            <trans-unit id="user.lastname.max">
+                <source>user.lastname.max</source>
+                <target>Coloque hasta 255 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="user.mail.not_blank">
+                <source>user.mail.not_blank</source>
+                <target>Ingrese una dirección de correo.</target>
+            </trans-unit>
+            <trans-unit id="user.mail.email">
+                <source>user.mail.email</source>
+                <target>Ingrese una dirección de correo válida.</target>
+            </trans-unit>
+            <trans-unit id="user.mail.max">
+                <source>user.mail.max</source>
+                <target>Coloque hasta 255 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="user.identification.not_blank">
+                <source>user.identification.not_blank</source>
+                <target>Ingrese cédula o número de identificación</target>
+            </trans-unit>
+            <trans-unit id="user.identification.regex">
+                <source>user.identification.regex</source>
+                <target>Ingrese sólo valores numéricos.</target>
+            </trans-unit>
+            <trans-unit id="user.identification.max">
+                <source>user.identification.max</source>
+                <target>Coloque hasta 15 caracteres numéricos.</target>
+            </trans-unit>
+            <trans-unit id="user.telephone.regex">
+                <source>user.telephone.regex</source>
+                <target>Sólo números sin otros caracteres o espacios.</target>
+            </trans-unit>
+            <trans-unit id="user.telephone.max">
+                <source>user.telephone.max</source>
+                <target>Coloque hasta 255 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="user.celular.regex">
+                <source>user.celular.regex</source>
+                <target>Sólo números sin otros caracteres o espacios.</target>
+            </trans-unit>
+            <trans-unit id="user.celular.max">
+                <source>user.celular.max</source>
+                <target>Coloque hasta 255 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="user.address.max">
+                <source>user.address.max</source>
+                <target>Coloque hasta 255 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="user.cov.regex">
+                <source>user.cov.regex</source>
+                <target>Sólo números sin otros caracteres o espacios.</target>
+            </trans-unit>
+            <trans-unit id="user.cov.max">
+                <source>user.cov.max</source>
+                <target>Coloque hasta 255 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="user.mpps.regex">
+                <source>user.mpps.regex</source>
+                <target>Sólo números sin otros caracteres o espacios.</target>
+            </trans-unit>
+            <trans-unit id="user.mpps.max">
+                <source>user.mpps.max</source>
+                <target>Coloque hasta 255 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="user.username.not_blank">
+                <source>user.username.not_blank</source>
+                <target>Ingrese un nombre de usuario.</target>
+            </trans-unit>
+            <trans-unit id="user.username.regex">
+                <source>user.username.regex</source>
+                <target>Sólo caracteres alfanuméricos comenzando con una letra, entre 5-20 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="user.username.max">
+                <source>user.username.max</source>
+                <target>Hasta 20 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="user.password.not_blank">
+                <source>user.password.not_blank</source>
+                <target>Ingrese un password</target>
+            </trans-unit>
+            <trans-unit id="user.value.exists">
+                <source>user.value.exists</source>
+                <target>Ya se encuentra registrado.</target>
+            </trans-unit>
+            <trans-unit id="user.question.not_blank">
+                <source>user.question.not_blank</source>
+                <target>Seleccione una pregunta</target>
+            </trans-unit>
+            
+            <trans-unit id="question.value.exists">
+                <source>question.value.exists</source>
+                <target>Este alias ya se encuentra registrado.</target>
+            </trans-unit>
+            <trans-unit id="diagnostic.name.not_blank">
+                <source>diagnostic.name.not_blank</source>
+                <target>Ingrese un nombre de diagnóstico</target>
+            </trans-unit>
+            <trans-unit id="diagnostic.name.regex">
+                <source>diagnostic.name.regex</source>
+                <target>Sólo caracteres alfanuméricos hasta 20 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="diagnostic.name.max">
+                <source>diagnostic.name.max</source>
+                <target>Hasta 50 caracteres solamente.</target>
+            </trans-unit>
+            <trans-unit id="diagnostic.name.exists">
+                <source>diagnostic.name.exists</source>
+                <target>El diagnóstico ya está registrado.</target>
+            </trans-unit>
+            <trans-unit id="diagnostic.description.max">
+                <source>diagnostic.description.max</source>
+                <target>Hasta 255 caracteres únicamente.</target>
+            </trans-unit>
+            <trans-unit id="treatment.name.not_blank">
+                <source>treatment.name.not_blank</source>
+                <target>Ingrese un nombre de tratamiento</target>
+            </trans-unit>
+            <trans-unit id="treatment.name.regex">
+                <source>treatment.name.regex</source>
+                <target>Sólo caracteres alfanuméricos hasta 50 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="treatment.name.max">
+                <source>treatment.name.max</source>
+                <target>Hasta 50 caracteres solamente.</target>
+            </trans-unit>
+            <trans-unit id="treatment.name.exists">
+                <source>treatment.name.exists</source>
+                <target>El tratamiento ya está registrado.</target>
+            </trans-unit>
+            <trans-unit id="treatment.description.max">
+                <source>treatment.description.max</source>
+                <target>Hasta 255 caracteres únicamente.</target>
+            </trans-unit>
+            <trans-unit id="pricing.price.not_blank">
+                <source>pricing.price.not_blank</source>
+                <target>Ingrese un precio</target>
+            </trans-unit>
+            <trans-unit id="pricing.price.float">
+                <source>pricing.price.float</source>
+                <target>Debe ingresar números.</target>
+            </trans-unit>
+            <trans-unit id="pricing.cost.not_blank">
+                <source>pricing.cost.not_blank</source>
+                <target>Ingrese un costo</target>
+            </trans-unit>
+            <trans-unit id="pricing.cost.float">
+                <source>pricing.cost.float</source>
+                <target>Debe ingresar números.</target>
+            </trans-unit>
+            <trans-unit id="patient.idnumber.not_blank">
+                <source>patient.idnumber.not_blank</source>
+                <target>Ingrese un número de cédula válido.</target>
+            </trans-unit>            
+            <trans-unit id="patient.idnumber.regex">
+                <source>patient.idnumber.regex</source>
+                <target>Ingrese sólo números sin algún caracter adicional.</target>
+            </trans-unit>
+            <trans-unit id="patient.idnumber.max">
+                <source>patient.idnumber.max</source>
+                <target>Hasta 15 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="patient.birthday.not_blank">
+                <source>patient.birthday.not_blank</source>
+                <target>Ingrese una fecha de nacimiento.</target>
+            </trans-unit>
+            <trans-unit id="patient.birthday.date">
+                <source>patient.birthday.date</source>
+                <target>Ingrese una fecha válida.</target>
+            </trans-unit>
+            <trans-unit id="patient.telephone.not_blank">
+                <source>patient.telephone.not_blank</source>
+                <target>Ingrese un teléfono válido.</target>
+            </trans-unit>
+            <trans-unit id="patient.idnumber.exists">
+                <source>patient.idnumber.exists</source>
+                <target>Número de célula ya existe.</target>
+            </trans-unit>
+            <trans-unit id="patient.gender.not_blank">
+                <source>patient.gender.not_blank</source>
+                <target>Seleccione sexo.</target>
+            </trans-unit>
+            <trans-unit id="patient.address.not_blank">
+                <source>patient.address.not_blank</source>
+                <target>Ingrese una dirección.</target>
+            </trans-unit>            
+            <trans-unit id="patient.job.not_blank">
+                <source>patient.job.not_blank</source>
+                <target>Seleccione trabajo.</target>
+            </trans-unit>
+            <trans-unit id="patient.job.max">
+                <source>patient.job.max</source>
+                <target>Hasta 255 caracteres.</target>
+            </trans-unit>
+            <trans-unit id="recover.qsecurity.not_blank">
+                <source>recover.qsecurity.not_blank</source>
+                <target>Ingrese una respuesta válida</target>
+            </trans-unit>
+            <trans-unit id="recover.qsecurity.regex">
+                <source>recover.qsecurity.regex</source>
+                <target>Sólo caracteres alfanuméricos comenzando con una letra, entre 5-20 caracteres</target>
+            </trans-unit>
+            <trans-unit id="recover.qsecurity.max">
+                <source>recover.qsecurity.max</source>
+                <target>Hasta 20</target>
+            </trans-unit>
+            <trans-unit id="recover.password.not_blank">
+                <source>recover.password.not_blank</source>
+                <target>Ingrese una contraseña</target>
+            </trans-unit>
+            <trans-unit id="select.empty.value">
+                <source>select.empty.value</source>
+                <target>Seleccione...</target>
+            </trans-unit>
+          
+            <trans-unit id="user.enteranswer">
+                <source>user.enteranswer</source>
+                <target>Ingrese su respuesta de seguridad </target>
+            </trans-unit>
+            <trans-unit id="user.roles.select">
+                <source>user.roles.select</source>
+                <target>Elija al menos un rol</target>
+            </trans-unit>
+            <trans-unit id="user.notexist">
+                <source>user.notexist</source>
+                <target>Usuario no existe</target>
+            </trans-unit>
+            <trans-unit id="user.answernotmatch">
+                <source>user.answernotmatch</source>
+                <target>La respuesta coincide</target>
+            </trans-unit>
+           
+        </body>
+    </file>
+</xliff>

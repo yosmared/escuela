@@ -1,0 +1,67 @@
+#### Flash messages ####
+
+# Role
+'flash.role.success.save': Rol <strong>%name%</strong> creado exitosamente
+'flash.role.success.edit.save': Rol <strong>%name%</strong> guardado
+'flash.role.success.deleted': Rol <strong>%name%</strong> eliminado exitosamente
+'flash.role.success.deletedall': El rol: <strong>%name%</strong> ha sido eliminado|Los %count% roles: <strong>%name%</strong> han sido eliminados
+'flash.role.warning.user_linked': Error: No es posible eliminar Rol <strong>%name%</strong>, tiene asociaciones con usuarios. Quite las relaciones e intente nuevamente
+'flash.role.warning.role_not_found': Error: No es posible mostrar el Rol deseado id: <strong>%name%</strong>
+
+# User
+'flash.user.success.save': Usuario <strong>%name%</strong> creado exitosamente
+'flash.user.success.edit.save': Usuario <strong>%name%</strong> guardado
+'flash.user.success.deleted': Usuario <strong>%name%</strong> eliminado exitosamente
+'flash.user.success.deletedall': Usuario: <strong>%name%</strong> ha sido eliminado|Los %count% usuarios: <strong>%name%</strong> han sido eliminados
+'flash.user.success.activated': Usuario <strong>%name%</strong> activado exitosamente
+'flash.user.success.deactivated': Usuario <strong>%name%</strong> desactivado exitosamente
+'flash.user.success.reset_password': Reinicio de la contraseña exitoso!
+'flash.user.warning.not_found': Error: No es posible mostrar el Usuario deseado: <strong>%name%</strong>
+
+# Treatment
+'flash.treatment.success.save': Tratamiento <strong>%name%</strong> creado exitosamente
+'flash.treatment.success.edit.save': Tratamiento <strong>%name%</strong> guardado
+'flash.treatment.success.deleted': Tratamiento <strong>%name%</strong> eliminado exitosamente
+'flash.treatment.success.deletedall': Tratamiento <strong>%name%</strong> ha sido eliminado exitosamente|%count% tratamientos: <strong>%name%</strong> han sido eliminados
+'flash.treatment.warning.not_found': Error: No es posible mostrar el Tratamiento deseado: <strong>%name%</strong>
+'flash.treatment.warning.has_diagnostics': Error: No es posible eliminar Tratamiento <strong>%name%</strong>, tiene asociaciones con Diagnósticos. Quite las relaciones e intente nuevamente
+
+# Diagnostic
+'flash.diagnostic.success.save': Diagnóstico <strong>%name%</strong> creado exitosamente
+'flash.diagnostic.success.edit.save': Diagnóstico <strong>%name%</strong> guardado
+'flash.diagnostic.success.deleted': Diagnóstico <strong>%name%</strong> eliminado exitosamente
+'flash.diagnostic.success.deletedall': Diagnóstico <strong>%name%</strong> ha sido eliminado exitosamente|%count% diagnósticos: <strong>%name%</strong> han sido eliminados
+'flash.diagnostic.warning.not_found': Error: No es posible mostrar el diagnóstico deseado: <strong>%name%</strong>
+'flash.diagnostic.warning.has_odontogram': Error: No es posible eliminar el diagnóstico <strong>%name%</strong>, tiene al menos una asociación con Odontograma. Elimine la relación e intente nuevamente.
+
+# Patient
+'flash.patient.success.save': Paciente <strong>%name%</strong> creado exitosamente
+'flash.patient.success.edit.save': Paciente <strong>%name%</strong> guardado
+'flash.patient.success.deleted': Paciente <strong>%name%</strong> eliminado exitosamente
+'flash.patient.success.deletedall': Paciente <strong>%name%</strong> ha sido eliminado exitosamente|%count% pacientes: <strong>%name%</strong> han sido eliminados
+'flash.patient.warning.not_found': Error: No es posible mostrar el Paciente deseado: <strong>%name%</strong>
+
+# Patient's Odontogram
+'flash.odontogram.patient.warning.not_found': Error: No es posible mostrar el Paciente deseado: <strong>%name%</strong>
+'flash.odontogram.warning.not_found': Error: No existe el odontograma <strong>%name%</strong> para este paciente
+'flash.odontogram.success.create': Odontograma del paciente <strong>%name%</strong> creado exitosamente
+'flash.odontogram.success.save': Odontograma del paciente <strong>%name%</strong> guardado exitosamente
+
+# Patient's Medical History
+'flash.medicalhistory.success.save': Historia Médica del paciente <strong>%name%</strong> guardada exitosamente
+
+# Question
+'flash.question.success.save': Pregunta <strong>%name%</strong> creada exitosamente
+'flash.question.success.edit.save': Pegunta <strong>%name%</strong> guardada
+'flash.question.success.deleted': Pregunta <strong>%name%</strong> eliminada exitosamente
+'flash.question.success.deletedall': Pregunta <strong>%name%</strong> ha sido eliminada exitosamente|%count% preguntas: <strong>%name%</strong> han sido eliminadas
+'flash.question.warning.not_found': Error: No es posible mostrar la Pregunta deseada: <strong>%name%</strong>
+'flash.question.warning.has_questiongroup': Error: No es posible eliminar la pregunta <strong>%name%</strong>, tiene asociaciones con un grupo de preguntas. Quite las relaciones e intente nuevamente
+
+# QuestionGroup
+'flash.questiongroup.success.save': Grupo de preguntas <strong>%name%</strong> creado exitosamente
+'flash.questiongroup.success.edit.save': Grupo Peguntas <strong>%name%</strong> guardada
+'flash.questiongroup.success.deleted': Grupo de preguntas <strong>%name%</strong> eliminado exitosamente
+'flash.questiongroup.success.deletedall': Grupo de preguntas <strong>%name%</strong> ha sido eliminada exitosamente|%count% preguntas: <strong>%name%</strong> han sido eliminadas
+'flash.questiongroup.warning.not_found': Error: No es posible mostrar el Grupo de preguntas deseado: <strong>%name%</strong>
+'flash.questiongroup.warning.has_user': Error: No es posible eliminar el Grupo de preguntas <strong>%name%</strong>, tiene asociaciones con un grupo de usuarios. Quite las relaciones e intente nuevamente

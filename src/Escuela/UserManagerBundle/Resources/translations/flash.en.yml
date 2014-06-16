@@ -1,0 +1,67 @@
+#### Flash messages ####
+
+# Role
+'flash.role.success.save': Role <strong>%name%</strong> successfully created!
+'flash.role.success.edit.save': Role <strong>%name%</strong> saved
+'flash.role.success.deleted': Role <strong>%name%</strong> successfully deleted!
+'flash.role.success.deletedall': Role <strong>%name%</strong> has been successfully deleted!|%count% roles: <strong>%name%</strong> were successfully deleted!
+'flash.role.warning.user_linked': Error: Couldn't delete Role <strong>%name%</strong>, it has assosiations with users. Unlink any association with users and try again
+'flash.role.warning.role_not_found': Error: Unable to find desired Role id: <strong>%name%</strong>
+
+# User
+'flash.user.success.save': User <strong>%name%</strong> successfully created!
+'flash.user.success.edit.save': User <strong>%name%</strong> saved
+'flash.user.success.deleted': User <strong>%name%</strong> successfully deleted!
+'flash.user.success.deletedall': User <strong>%name%</strong> has been successfully deleted!|%count% users: <strong>%name%</strong> were successfully deleted!
+'flash.user.success.activated': User <strong>%name%</strong> successfully activated!
+'flash.user.success.deactivated': User <strong>%name%</strong> successfully deactivated!
+'flash.user.success.reset_password': Password reset sucessful!
+'flash.user.warning.not_found': Error: Unable to find desired User id: <strong>%name%</strong>
+
+# Treatment
+'flash.treatment.success.save': Treatment <strong>%name%</strong> successfully created!
+'flash.treatment.success.edit.save': Treatment <strong>%name%</strong> saved
+'flash.treatment.success.deleted': Treatment <strong>%name%</strong> successfully deleted!
+'flash.treatment.success.deletedall': Treatment <strong>%name%</strong> has been successfully deleted!|%count% treatments: <strong>%name%</strong> were successfully deleted!
+'flash.treatment.warning.not_found': Error: Unable to find desired Treatment id: <strong>%name%</strong>
+'flash.treatment.warning.has_diagnostics': Error: Couldn't delete Treatments <strong>%name%</strong>, it has assosiations with diagnostics. Unlink any association and try again
+
+# Diagnostic
+'flash.diagnostic.success.save': Diagnostic <strong>%name%</strong> successfully created!
+'flash.diagnostic.success.edit.save': Diagnostic <strong>%name%</strong> saved
+'flash.diagnostic.success.deleted': Diagnostic <strong>%name%</strong> successfully deleted!
+'flash.diagnostic.success.deletedall': Diagnostic <strong>%name%</strong> has been successfully deleted!|%count% diagnostics: <strong>%name%</strong> were successfully deleted!
+'flash.diagnostic.warning.not_found': Error: Unable to find desired Diagnostic id: <strong>%name%</strong>
+'flash.diagnostic.warning.has_odontogram': Error: Couldn't delete diagnostic <strong>%name%</strong>, it has one assosiation at less with odontogram. Unlink any association and try again.
+
+# Patient
+'flash.patient.success.save': Patient <strong>%name%</strong> successfully created!
+'flash.patient.success.edit.save': Patient <strong>%name%</strong> saved
+'flash.patient.success.deleted': Patient <strong>%name%</strong> successfully deleted!
+'flash.patient.success.deletedall': Patient <strong>%name%</strong> has been successfully deleted!|%count% patients: <strong>%name%</strong> were successfully deleted!
+'flash.patient.warning.not_found': Error: Unable to find desired Patient id: <strong>%name%</strong>
+
+# Patient's Odontogram
+'flash.odontogram.patient.warning.not_found': Error: Unable to find desired Patient id: <strong>%name%</strong>
+'flash.odontogram.warning.not_found': Error: Odontogram <strong>%name%</strong> not found for this patient
+'flash.odontogram.success.create': Odontogram of patient <strong>%name%</strong> successfully created
+'flash.odontogram.success.save': Odontogram of patient <strong>%name%</strong> successfully updated
+
+# Patient's Medical History
+'flash.medicalhistory.success.save': Medical history of patient <strong>%name%</strong> successfully updated
+
+# Question
+'flash.question.success.save': Question <strong>%name%</strong> successfully created!
+'flash.question.success.edit.save': Question <strong>%name%</strong> saved
+'flash.question.success.deleted': Question <strong>%name%</strong> sucessfully deleted!
+'flash.question.success.deletedall': Question <strong>%name%</strong> has been successfully deleted!|%count% questions: <strong>%name%</strong> were successfully deleted!
+'flash.question.warning.not_found': Error: Unable to find desired Question id: <strong>%name%</strong>
+'flash.question.warning.has_questiongroup': Error: Unable to delete desired question <strong>%name%</strong>, it has associations with a question group. Remove relationships and try again
+
+# QuestionGroup
+'flash.questiongroup.success.save': Question group <strong>%name%</strong> successfully created!
+'flash.questiongroup.success.edit.save': Question group <strong>%name%</strong> saved
+'flash.questiongroup.success.deleted': Question group <strong>%name%</strong> sucessfully deleted!
+'flash.questiongroup.success.deletedall': Question group <strong>%name%</strong> has been successfully deleted!|%count% questions: <strong>%name%</strong> were successfully deleted!
+'flash.questiongroup.warning.not_found': Error: Unable to find desired Question group id: <strong>%name%</strong>
+'flash.questiongroup.warning.has_user': Error: Unable to delete desired Question group <strong>%name%</strong>, it has associations with an user. Remove relationships and try again

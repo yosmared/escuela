@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="question.title.create">
+                <source>question.title.create</source>
+                <target>Create Question</target>
+            </trans-unit>
+            <trans-unit id="question.title.edit">
+                <source>question.title.edit</source>
+                <target>Question Edit</target>
+            </trans-unit>
+            <trans-unit id="question.title.show">
+                <source>question.title.show</source>
+                <target>Question Details</target>
+            </trans-unit>
+        	<trans-unit id="question.alias">
+                <source>question.alias</source>
+                <target>Alias</target>
+            </trans-unit>
+            <trans-unit id="question.name.placeholder">
+                <source>question.name.placeholder</source>
+                <target>Short name for question</target>
+            </trans-unit>
+            <trans-unit id="question.text">
+                <source>question.text</source>
+                <target>Text</target>
+            </trans-unit>
+            <trans-unit id="question.text.placeholder">
+                <source>question.text.placeholder</source>
+                <target>Question text</target>
+            </trans-unit>                        
+            <trans-unit id="question.type">
+                <source>question.type</source>
+                <target>Question type</target>
+            </trans-unit>
+            <trans-unit id="question.type.0">
+                <source>question.type.0</source>
+                <target>Select...</target>
+            </trans-unit>
+            <trans-unit id="question.options">
+                <source>question.options</source>
+                <target>Question options</target>
+            </trans-unit>
+            <trans-unit id="question.preview.title">
+                <source>question.preview.title</source>
+                <target>Preview</target>
+            </trans-unit>
+            <trans-unit id="question.preview.question">
+                <source>question.preview.question</source>
+                <target>Question</target>
+            </trans-unit>
+            <trans-unit id="question.preview.write">
+                <source>question.preview.write</source>
+                <target>Write question</target>
+            </trans-unit>
+            <trans-unit id="question.preview.answer">
+                <source>question.preview.answer</source>
+                <target>Answer(s)</target>
+            </trans-unit>
+            <trans-unit id="question.preview.answer.write">
+                <source>question.preview.answer.write</source>
+                <target>Select a question type</target>
+            </trans-unit>           
+            <trans-unit id="question.suggest.emptytext">
+                <source>question.suggest.emptytext</source>
+                <target>Fill in options</target>
+            </trans-unit>
+            <trans-unit id="question.suggest.notfound">
+                <source>question.suggest.notfound</source>
+                <target>No suggestions</target>
+            </trans-unit>
+            <trans-unit id="question.suggest.max">
+                <source>question.suggest.max</source>
+                <target>You cannot choose more than 10 items</target>
+            </trans-unit>
+            <trans-unit id="question.question_radio.what">
+                <source>question.question_radio.what</source>
+                <target>What?</target>
+            </trans-unit>
+            <trans-unit id="question.question_radio.how">
+                <source>question.question_radio.how</source>
+                <target>How?</target>
+            </trans-unit>
+            <trans-unit id="question.question_radio.when">
+                <source>question.question_radio.when</source>
+                <target>When?</target>
+            </trans-unit>            
+            <trans-unit id="question.question_radio.where">
+                <source>question.question_radio.where</source>
+                <target>Where?</target>
+            </trans-unit>
+            <trans-unit id="question.question_radio.when.raw">
+                <source>¿Cuándo?</source>
+                <target>When?</target>
+            </trans-unit>
+            <trans-unit id="question.type.empty">
+                <source>question.type.empty</source>
+                <target>Choose...</target>
+            </trans-unit>
+            <trans-unit id="question.value.yes">
+                <source>question.value.yes</source>
+                <target>yes</target>
+            </trans-unit>
+            <trans-unit id="question.text.yes">
+                <source>question.text.yes</source>
+                <target>Yes</target>
+            </trans-unit>
+            <trans-unit id="question.value.no">
+                <source>question.value.no</source>
+                <target>no</target>
+            </trans-unit>
+            <trans-unit id="question.text.no">
+                <source>question.text.no</source>
+                <target>No</target>
+            </trans-unit>
+            <trans-unit id="question.text.explain">
+                <source>question.text.explain</source>
+                <target>Explain</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

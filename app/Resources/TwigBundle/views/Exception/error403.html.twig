@@ -1,0 +1,12 @@
+{% extends 'SoftclearSoftOdontoBundle::layout.html.twig' %}
+
+{% set page_title="Restricted Area" %}
+{% block navbar_header %}{% endblock %}
+{% block content %}
+<div id="main-content" class="col-md-9 well col-md-offset-2">
+   <h2>{{ page_title }}</h2>
+   {% block side_navbar%}{% endblock %}
+   <h2>It's an area forbidden for you .</h2>    
+</div>
+
+{% endblock %}

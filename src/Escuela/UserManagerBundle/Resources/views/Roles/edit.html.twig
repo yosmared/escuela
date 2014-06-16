@@ -1,0 +1,14 @@
+{% extends 'EscuelaCommonsBundle:Base:edit-base.html.twig' %}
+		
+{# Page title and heading	 #}
+{% set page_title="form.role.edit.title" %}
+
+{% block form_fields %}
+    {% set form_object= edit_form %}
+    {% include "EscuelaUserManagerBundle:Roles:new-edit-fields.html.twig" %}
+{% endblock %}
+
+{% block action_buttons %}
+	{% set cancel_url= path('roles_list') %}
+	{{ parent() }}
+{% endblock %}

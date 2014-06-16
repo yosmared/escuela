@@ -1,0 +1,46 @@
+{% extends 'EscuelaCommonsBundle::layout.html.twig'  %}
+
+{% block content -%}
+{{ parent()}}
+<div id="main-content" class="col-md-9 well">
+	<div class="container">
+
+		{# Horizontal form #}
+		{{ form_start(form, {'attr': {'class': 'form-horizontal', 'id': 'entity-form'}}) }}
+
+		{# Sets form header using page_title variable inside each entity view #}
+		<h2>{{ page_title|trans }}</h2>
+		{% trans_default_domain "forms" %}
+		{# If is there any errors they will be shown at the beginning of the form #}
+		{% block form_errors %}
+			{% if form_errors(form) %}
+			<div class="alert alert-danger">
+			    {{ form_errors(form)|raw}}
+			</div>
+			{% endif %}
+		{% endblock %}
+
+		{% block form_fields %}{% endblock %}			  
+
+		{# Required fields legend #}
+		<p class="text-right"><small>(<span>*</span>){{' '~'form.button.req_fields_legend'|trans}}</small></p>
+
+		<div class="form-group">
+			{% block action_buttons %} {% trans_default_domain "forms" %}
+				{# Save button #}
+				<div class="col-sm-2">
+					{{ form_widget(form.submit, { 'label': 'form.button.save'|trans, 'attr': {'class': 'form-control btn btn-primary'}}) }}  
+				</div>
+
+				{# Cancel button #}
+				<div class="col-sm-2">
+					<a href="{{ cancel_url }}" class="btn btn-default" role="button">{{ 'form.button.cancel'|trans }}</a>
+				</div>
+			{% endblock %}
+		</div>
+
+		<div class="hidden">{{ form_rest(form) }}</div>
+		{{ form_end(form) }}
+	</div>
+</div>
+{% endblock %}

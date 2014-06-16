@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Symfony2 is great</source>
+                <target>J'aime Symfony2</target>
+            </trans-unit>
+            <!-- Pagination -->
+            <trans-unit id="Previous">
+                <source>Previous</source>
+                <target>Atrás</target>
+            </trans-unit>
+            <trans-unit id="Next">
+                <source>Next</source>
+                <target>Siguiente</target>
+            </trans-unit>
+            <trans-unit id="system.access">
+                <source>system.access</source>
+                <target>Acceso al Sistema</target>
+            </trans-unit>
+            <!-- Title List Roles -->
+            <trans-unit id="list.role.title">
+                <source>list.role.title</source>
+                <target>Lista de Roles</target>
+            </trans-unit>
+            <trans-unit id="list.user.title">
+                <source>list.user.title</source>
+                <target>Lista de Usuarios</target>
+            </trans-unit>
+            <trans-unit id="list.treatments.title">
+                <source>list.treatments.title</source>
+                <target>Lista de Tratamientos</target>
+            </trans-unit>
+            <trans-unit id="list.diagnostics.title">
+                <source>list.diagnostics.title</source>
+                <target>Lista de Diagnósticos</target>
+            </trans-unit>
+            <trans-unit id="list.patients.title">
+                <source>list.patients.title</source>
+                <target>Lista de Pacientes</target>
+            </trans-unit>
+            <trans-unit id="list.questions.title">
+                <source>list.questions.title</source>
+                <target>Lista de Preguntas</target>
+            </trans-unit>
+            <trans-unit id="list.electronicjournal.title">
+                <source>list.electronicjournal.title</source>
+                <target>Diario Electrónico</target>
+            </trans-unit>
+            <trans-unit id="list.questiongroup.title">
+                <source>list.questiongroup.title</source>
+                <target>Grupo de Preguntas</target>
+            </trans-unit>
+            <trans-unit id="list.questiongroup.field.alias">
+                <source>list.questiongroup.field.alias</source>
+                <target>Alias</target>
+            </trans-unit>
+            <trans-unit id="list.questiongroup.field.lastedit">
+                <source>list.questiongroup.field.lastedit</source>
+                <target>Última Modificación</target>
+            </trans-unit>
+            <trans-unit id="list.questiongroup.field.user">
+                <source>list.questiongroup.field.user</source>
+                <target>Usuario</target>
+            </trans-unit>
+            
+                         <!-- Titles -->
+            <trans-unit id="form.user.title">
+                <source>form.user.title</source>
+                <target>Crear Usuario</target>
+            </trans-unit>
+            <trans-unit id="form.user.edit.title">
+                <source>form.user.edit.title</source>
+                <target>Editar Usuario</target>
+            </trans-unit>
+           <trans-unit id="form.user.show.title">
+                <source>form.user.show.title</source>
+                <target>Detalle del Usuario</target>
+            </trans-unit>
+            <trans-unit id="form.role.create.title">
+                <source>form.role.create.title</source>
+                <target>Crear Rol</target>
+            </trans-unit>
+            <trans-unit id="form.role.edit.title">
+                <source>form.role.edit.title</source>
+                <target>Editar Rol</target>
+            </trans-unit>
+            
+            <trans-unit id="form.role.show.title">
+                <source>form.role.show.title</source>
+                <target>Detalle del Rol</target>
+            </trans-unit>
+            
+            <trans-unit id="form.treatment.create.title">
+                <source>form.treatment.create.title</source>
+                <target>Crear Tratamiento</target>
+            </trans-unit>
+            
+            <trans-unit id="form.treatment.edit.title">
+                <source>form.treatment.edit.title</source>
+                <target>Editar Tratamiento</target>
+            </trans-unit>
+            
+            <trans-unit id="form.treatment.show.title">
+                <source>form.treatment.show.title</source>
+                <target>Detalle de Tratamiento</target>
+            </trans-unit>
+            <trans-unit id="form.diagnostic.create.title">
+                <source>form.diagnostic.create.title</source>
+                <target>Crear Diagnóstico</target>
+            </trans-unit>
+            
+            <trans-unit id="form.diagnostic.edit.title">
+                <source>form.diagnostic.edit.title</source>
+                <target>Editar Diagnóstico</target>
+            </trans-unit>
+            
+            <trans-unit id="form.diagnostic.show.title">
+                <source>form.diagnostic.show.title</source>
+                <target>Detalle de Diagnóstico</target>
+            </trans-unit>
+            
+            <trans-unit id="form.patient.create.title">
+                <source>form.patient.create.title</source>
+                <target>Registrar Paciente</target>
+            </trans-unit>
+            
+            <trans-unit id="form.patient.edit.title">
+                <source>form.patient.edit.title</source>
+                <target>Editar Paciente</target>
+            </trans-unit>
+            
+            <trans-unit id="form.patient.show.title">
+                <source>form.patient.show.title</source>
+                <target>Detalle del Paciente</target>
+            </trans-unit>
+            <!-- Olvide contraseña -->
+            <trans-unit id="form.recover.title">
+                <source>form.recover.title</source>
+                <target>Recuperación de Contraseña</target>
+            </trans-unit>
+            <trans-unit id="form.recover.question.title">
+                <source>form.recover.question.title</source>
+                <target>Pregunta de Seguridad</target>
+            </trans-unit>
+            <trans-unit id="form.recover.reset.title">
+                <source>form.recover.reset.title</source>
+                <target>Establecer Contraseña</target>
+            </trans-unit>
+            
+            <trans-unit id="form.recover.button.acept">
+                <source>form.recover.button.acept</source>
+                <target>Aceptar</target>
+            </trans-unit>
+            <trans-unit id="form.recover.button.cancel">
+                <source>form.recover.button.cancel</source>
+                <target>Cancelar</target>
+            </trans-unit>
+            
+        </body>
+    </file>
+</xliff>

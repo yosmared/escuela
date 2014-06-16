@@ -1,0 +1,175 @@
+
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.name, 'form.user.name'|trans, {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.name) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.name) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.name, {'attr': {'class': 'form-control', 'placeholder': 'form.user.name'|trans}}) }}
+    </div>			    
+</div>
+
+{# Last Name #}
+<div class="form-group">
+	{{ form_label(form_object.lastname, 'form.user.lastname'|trans, {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+    	{% if form_errors(form_object.lastname) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.lastname) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.lastname, {'attr': {'class': 'form-control', 'placeholder': 'form.user.lastname'|trans, 'required': 'required'}}) }}
+    </div>			    
+</div>
+
+{# Email #}
+<div class="form-group">
+	{{ form_label(form_object.mail, 'form.user.email'|trans, {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+    	{% if form_errors(form_object.mail) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.mail) }}</small>
+            </div>
+        {%  endif %}		    	
+    	{{ form_widget(form_object.mail, {'attr': {'class': 'form-control required', 'placeholder': 'acme@mail.com', 'required': 'required', 'type': 'email' }}) }}
+    </div>			    
+</div>
+
+{# Id #}
+<div class="form-group">
+	{{ form_label(form_object.identification, 'form.user.idcard'|trans, {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+    	{% if form_errors(form_object.identification) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.identification) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.identification, {'attr': {'class': 'form-control', 'placeholder': 'form.user.idcard'|trans, 'required': 'required'}}) }}
+    </div>			    
+</div>
+
+{# Telephone #}
+<div class="form-group">
+	{{ form_label(form_object.telephone, 'form.user.telephone'|trans, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-7">
+    	{% if form_errors(form_object.telephone) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.telephone) }}</small>
+            </div>
+        {%  endif %}			    	
+    	{{ form_widget(form_object.telephone, {'attr': {'class': 'form-control', 'placeholder': 'form.integer.placeholder'|trans}}) }}
+    </div>			    
+</div>
+
+{# Cellphone #}
+<div class="form-group">
+	{{ form_label(form_object.celular, 'form.user.mobile'|trans, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-7">
+    	{% if form_errors(form_object.celular) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.celular) }}</small>
+            </div>
+        {%  endif %}			    	
+    	{{ form_widget(form_object.celular, {'attr': {'class': 'form-control', 'placeholder': 'form.integer.placeholder'|trans}}) }}
+    </div>			    
+</div>
+
+{# Address #}
+<div class="form-group">
+	{{ form_label(form_object.address, 'form.user.address'|trans, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-7">
+    	{% if form_errors(form_object.address) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.address) }}</small>
+            </div>
+        {%  endif %}    			    	
+    	{{ form_widget(form_object.address, {'attr': {'class': 'form-control', 'placeholder': 'form.user.address'|trans}}) }}
+    </div>			    
+</div>
+			
+{# Username #}
+<div class="form-group">
+	{{ form_label(form_object.username, 'form.user.username'|trans, {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+    	{% if form_errors(form_object.username) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.username) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.username, {'attr': {'class': 'form-control', 'placeholder': 'form.alphanumeric.placeholder'|trans, 'required': 'required'}}) }}
+    </div>			    
+</div>
+
+{# Password and repeat password #}
+{% set i=0 %}
+{% for passwordField in form_object.password %}		
+<div class="form-group">
+    {% set i=i+1 %}
+	{% if i==1 %}
+		{% set label='form.user.password'|trans %}
+		
+	{% else %}
+		{% set label='form.user.confirm'|trans %}
+	{% endif %} 
+    {{ form_label(passwordField, label, { 'label_attr': {'class': 'col-sm-2 control-label required'} }) }}
+    <div class="col-sm-7">
+    	{% if form_errors(passwordField) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(passwordField) }}</small>
+            </div>
+        {%  endif %}
+        {{ form_widget(passwordField, { 'attr': {'class': 'form-control','placeholder':label} }) }}
+    </div>
+</div>
+{% endfor %}
+
+{# User roles #}
+{# If user is the same user that he's editing AND has edit, owner permissions then show role selector#}
+{% if ( (entity.id==app.user.id and  is_granted('EDIT', service)) or is_granted('OWNER', service) ) %}
+    <div class="form-group">
+        {{ form_label(form_object.rolesid, 'Roles', { 'label_attr': {'class': 'col-sm-2 control-label required'} }) }}
+        <div class="col-sm-7">
+            {{ form_errors(form_object.rolesid) }}
+            {% for key, rol in form_object.rolesid %}
+                {% for rolActive in roles %}
+                    {% if key == rolActive.id %}
+                        {{ form_row(rol) }}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
+{# User security #}
+<div class="form-group">
+	{{ form_label(form_object.questionsecurity, 'form.user.question'|trans, { 'label_attr': {'class': 'col-sm-2 control-label required'} }) }}
+	<div class="col-sm-7">
+		{% if form_errors(form_object.questionsecurity) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.questionsecurity) }}</small>
+            </div>
+        {%  endif %}
+
+        {{ form_widget(form_object.questionsecurity) }}
+
+	</div>
+</div>
+
+{# Answers security #}
+<div class="form-group">
+	{{ form_label(form_object.answertext, 'form.user.answer'|trans, { 'label_attr': {'class': 'col-sm-2 control-label required'} }) }}
+	<div class="col-sm-7">
+		{% if form_errors(form_object.answertext) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.answertext) }}</small>
+            </div>
+        {%  endif %}
+
+        {{ form_widget(form_object.answertext,{'attr': {'class': 'form-control', 'required': 'required', 'value': answertext }}) }}
+	</div>
+</div>

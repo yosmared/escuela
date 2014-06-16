@@ -1,0 +1,32 @@
+{% extends 'EscuelaCommonsBundle::layout.html.twig' %}
+{% block content %}
+{{ parent()}}
+<div id="main-content" class="col-md-9 well">
+
+    {# Sets form header using page_title variable inside each entity view #}
+    <h2>{{ page_title|trans }}</h2>
+    {% trans_default_domain "forms" %}
+
+    {# Entity details #}
+    <table class="record_properties table table-hover">
+        {% block entity_details %}{% endblock %}        
+    </table>
+
+    <div class="form-group">
+    {% block action_buttons %}{% trans_default_domain "forms" %}
+        {# Edit button #}
+        {% if edit_url is defined %}
+            <div class="col-sm-2">
+                <a href="{{ edit_url }}" class="btn btn-primary" role="button">{{ "form.button.edit"|trans }}</a>
+            </div>
+        {% endif %}
+
+        {# Back button #}
+        <div class="col-sm-2">
+            <a href="{{ back_url }}" class="btn btn-default" role="button">{{ "form.button.back"|trans }}</a>
+        </div>
+       
+    {% endblock %}
+    </div>
+</div>
+{% endblock %}

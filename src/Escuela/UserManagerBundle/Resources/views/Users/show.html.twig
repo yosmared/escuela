@@ -1,0 +1,68 @@
+{% extends 'EscuelaCommonsBundle:Base:show-base.html.twig' %}
+
+{# Page title and heading  #}
+{% set page_title="form.user.show.title" %}
+
+{% block entity_details %} {% trans_default_domain "forms" %}
+<div class="row">
+	<div class="col-sm-4"><strong>{{ 'form.user.name'|trans }}:</strong></div>
+	<div class="col-sm-6">{{ entity.name }}</div>
+</div>
+<div class="row">
+	<div class="col-sm-4"><strong>{{ 'form.user.lastname'|trans }}:</strong></div>
+	<div class="col-sm-6">{{ entity.lastname }}</div>
+</div>
+<div class="row">
+	<div class="col-sm-4"><strong>{{ 'form.user.username'|trans }}:</strong></div>
+	<div class="col-sm-6">{{ entity.username }}</div>
+</div>
+<div class="row">
+	<div class="col-sm-4"><strong>{{ 'form.user.idcard'|trans }}:</strong></div>
+	<div class="col-sm-6">{{ entity.identification }}</div>
+</div>
+<div class="row">
+	<div class="col-sm-4"><strong>{{ 'form.user.email'|trans }}:</strong></div>
+	<div class="col-sm-6">{{ entity.mail }}</div>
+</div>
+<div class="row">
+	<div class="col-sm-4"><strong>{{ 'form.user.telephone'|trans }}:</strong></div>
+	<div class="col-sm-6">{{ entity.telephone }}</div>
+</div>
+<div class="row">
+	<div class="col-sm-4"><strong>{{ 'form.user.mobile'|trans }}:</strong></div>
+	<div class="col-sm-6">{{ entity.celular }}</div>
+</div>
+<div class="row">
+	<div class="col-sm-4"><strong>{{ 'form.user.address'|trans }}:</strong></div>
+	<div class="col-sm-6">{{ entity.address }}</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4"><strong>{{ 'form.user.roles'|trans }}:</strong></div>
+	<div class="col-sm-6">
+	{% set i=0 %}
+	{% set size = entity.roles | length %}
+	{% for role in entity.roles %}
+		{%  set i = i + 1 %}
+		{% if i<size %}
+			{{ role.name ~ ',' }}
+		{% elseif i ==size %}
+			{{ role.name  }}
+		{% endif %}
+	{% endfor %}
+	</div>
+</div>
+
+{% endblock %}
+
+{# Edit button url #}
+{% if (is_granted('EDIT',service)) or (entity.id == current_user) %}
+	{% set edit_url= path('user_edit', { 'id': entity.id }) %}
+{% endif %}
+
+{# Back button url #}
+{% if (is_granted('VIEW',service)) %}
+	{% set back_url = path('user_list') %}
+{% else %}
+	{% set back_url = path('_usermanager_root') %}
+{% endif %}

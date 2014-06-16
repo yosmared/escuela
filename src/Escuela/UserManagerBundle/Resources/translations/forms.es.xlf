@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+       		<!-- Form User -->
+            <trans-unit id="form.user.name">
+                <source>form.user.name</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="form.user.lastname">
+                <source>form.user.lastname</source>
+                <target>Apellido</target>
+            </trans-unit>
+            <trans-unit id="form.user.email">
+                <source>form.user.email</source>
+                <target>Correo electrónico</target>
+            </trans-unit>
+            <trans-unit id="form.user.idcard">
+                <source>form.user.idcard</source>
+                <target>Cédula</target>
+            </trans-unit>
+            <trans-unit id="form.user.telephone">
+                <source>form.user.telephone</source>
+                <target>Telefóno</target>
+            </trans-unit>          
+            <trans-unit id="form.user.mobile">
+                <source>form.user.mobile</source>
+                <target>Celular</target>
+            </trans-unit>
+            <trans-unit id="form.user.address">
+                <source>form.user.address</source>
+                <target>Dirección</target>
+            </trans-unit>
+            <trans-unit id="form.user.numcov">
+                <source>form.user.numcov</source>
+                <target>Número COV</target>
+            </trans-unit>
+            <trans-unit id="form.user.nummpps">
+                <source>form.user.nummpps</source>
+                <target>Número MPPS</target>
+            </trans-unit>
+             <trans-unit id="form.user.roles">
+                <source>form.user.roles</source>
+                <target>Roles</target>
+            </trans-unit>
+            <trans-unit id="form.user.username">
+                <source>form.user.username</source>
+                <target>Usuario</target>
+            </trans-unit>
+            <trans-unit id="form.user.password">
+                <source>form.user.password</source>
+                <target>Contraseña</target>
+            </trans-unit>
+            
+            <trans-unit id="form.user.confirm">
+                <source>form.user.confirm</source>
+                <target>Confirmar</target>
+            </trans-unit>
+            
+             <trans-unit id="form.user.question">
+                <source>form.user.question</source>
+                <target>Pregunta de Seguridad</target>
+            </trans-unit>
+            <trans-unit id="form.user.answer">
+                <source>form.user.answer</source>
+                <target>Respuesta</target>
+            </trans-unit>
+           
+            
+            <!-- Form Roles -->
+           <trans-unit id="form.role.name">
+                <source>form.role.name</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="form.role.description">
+                <source>form.role.description</source>
+                <target>Descripción</target>
+            </trans-unit>
+            <trans-unit id="form.role.title.manage.permission">
+                <source>form.role.title.manage.permission</source>
+                <target>Gestión de permisos</target>
+            </trans-unit>
+            <trans-unit id="form.role.servicename">
+                <source>form.role.servicename</source>
+                <target>Nombre del Servicio</target>
+            </trans-unit>
+            <trans-unit id="form.role.permissions">
+                <source>form.role.permissions</source>
+                <target>Permisos</target>
+            </trans-unit>
+            <trans-unit id="form.role.permission.edit">
+                <source>form.role.permission.edit</source>
+                <target>Editar</target>
+            </trans-unit>
+            <trans-unit id="form.role.permission.view">
+                <source>form.role.permission.view</source>
+                <target>Visualizar</target>
+            </trans-unit>
+            <trans-unit id="form.role.permission.delete">
+                <source>form.role.permission.delete</source>
+                <target>Eliminar</target>
+            </trans-unit>
+            <trans-unit id="form.role.permission.create">
+                <source>form.role.permission.create</source>
+                <target>Crear</target>
+            </trans-unit>
+            <trans-unit id="form.role.permission.all">
+                <source>form.role.permission.all</source>
+                <target>Todos</target>
+            </trans-unit>
+            
+            <!-- Form Treatments -->
+            <trans-unit id="form.treatment.name">
+                <source>form.treatment.name</source>
+                <target>Nombre</target>
+            </trans-unit>
+			<trans-unit id="form.treatment.description">
+                <source>form.treatment.description</source>
+                <target>Descripción</target>
+            </trans-unit>
+            
+            <!-- Form Pricing -->      
+            <trans-unit id="form.treatment.pricing.currentprice">
+                <source>form.treatment.pricing.currentprice</source>
+                <target>Precio Actual</target>
+            </trans-unit>
+            <trans-unit id="form.treatment.pricing.cost">
+                <source>form.treatment.pricing.cost</source>
+                <target>Costo</target>
+            </trans-unit>
+            <trans-unit id="form.treatment.pricing.currentcost">
+                <source>form.treatment.pricing.currentcost</source>
+                <target>Costo Actual</target>
+            </trans-unit>
+            <trans-unit id="form.treatment.pricing.price">
+                <source>form.treatment.pricing.price</source>
+                <target>Precio</target>
+            </trans-unit>
+            <trans-unit id="form.treatment.pricing.from">
+                <source>form.treatment.pricing.from</source>
+                <target>Desde</target>
+            </trans-unit>
+            <trans-unit id="form.treatment.pricing.until">
+                <source>form.treatment.pricing.until</source>
+                <target>Hasta</target>
+            </trans-unit>
+            
+             <!-- Form Patients -->
+            <trans-unit id="form.patient.name">
+                <source>form.patient.name</source>
+                <target>Nombre</target>
+            </trans-unit>
+			<trans-unit id="form.patient.lastname">
+                <source>form.patient.lastname</source>
+                <target>Apellido</target>
+            </trans-unit>
+            <trans-unit id="form.patient.idcard">
+                <source>form.patient.idcard</source>
+                <target>Cédula</target>
+            </trans-unit>
+            <trans-unit id="form.patient.birthdate">
+                <source>form.patient.birthdate</source>
+                <target>Fecha de nacimiento</target>
+            </trans-unit>
+            <trans-unit id="form.patient.gender">
+                <source>form.patient.gender</source>
+                <target>Sexo</target>
+            </trans-unit>
+            <trans-unit id="form.patient.gender.male">
+                <source>form.patient.gender.male</source>
+                <target>Masculino</target>
+            </trans-unit>
+            <trans-unit id="form.patient.gender.female">
+                <source>form.patient.gender.female</source>
+                <target>Femenino</target>
+            </trans-unit>
+            <trans-unit id="form.patient.address">
+                <source>form.patient.address</source>
+                <target>Dirección</target>
+            </trans-unit>
+            <trans-unit id="form.patient.telephone">
+                <source>form.patient.telephone</source>
+                <target>Teléfono</target>
+            </trans-unit>
+            <trans-unit id="form.patient.job">
+                <source>form.patient.job</source>
+                <target>Trabajo</target>
+            </trans-unit>
+            <trans-unit id="form.patient.job.placeholder">
+                <source>form.patient.job.placeholder</source>
+                <target>Ocupación/Cargo</target>
+            </trans-unit>
+            <trans-unit id="form.patient.odontogram.type">
+                <source>form.patient.odontogram.type</source>
+                <target>Tipo</target>
+            </trans-unit>
+            <trans-unit id="form.patient.odontogram.delete">
+                <source>form.patient.odontogram.delete</source>
+                <target>Eliminar</target>
+            </trans-unit>
+            <trans-unit id="form.patient.odontogram.add">
+                <source>form.patient.odontogram.add</source>
+                <target>Agregar</target>
+            </trans-unit>
+            <trans-unit id="form.patient.odontogram.lingual">
+                <source>form.patient.odontogram.lingual</source>
+                <target>Linguales</target>
+            </trans-unit>
+            <trans-unit id="form.patient.odontogram.help">
+                <source>form.patient.odontogram.help</source>
+                <target>Las caras del diente son:#S: Superior#I: Inferior#D: Derecho#Z: Izquierdo#C: Central#X: Completo#Para seleccionar la zona del diente, haga click en ella</target>
+            </trans-unit>
+            <trans-unit id="odontogram.show.help">
+                <source>odontogram.show.help</source>
+                <target>Ayuda</target>
+            </trans-unit>
+
+             <trans-unit id="tag.patient.personaldata">
+                <source>tag.patient.personaldata</source>
+                <target>Datos Personales</target>
+            </trans-unit>
+            <trans-unit id="tag.patient.medicalhistory">
+                <source>tag.patient.medicalhistory</source>
+                <target>Historia<![CDATA[<br>]]>Médica</target>
+            </trans-unit>
+            <trans-unit id="tag.patient.odontogram">
+                <source>tag.patient.odontogram</source>
+                <target>Odontograma &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</target>
+            </trans-unit>
+            <trans-unit id="tag.patient.treatmentplan">
+                <source>tag.patient.treatmentplan</source>
+                <target>Plan de Tratamiento</target>
+            </trans-unit>
+            <trans-unit id="tag.patient.treatmentsequence">
+                <source>tag.patient.treatmentsequence</source>
+                <target>Secuencia de Tratamiento</target>
+            </trans-unit>
+            <trans-unit id="form.button.req_fields_legend">
+                <source>form.button.req_fields_legend</source>
+                <target>Campos Requeridos</target>
+            </trans-unit>
+            <trans-unit id="tag.patient.patient.data">
+                <source>tag.patient.patient.data</source>
+                <target>Datos del paciente</target>
+            </trans-unit>
+
+            <!-- Buttons -->
+            <trans-unit id="form.button.save">
+                <source>form.button.save</source>
+                <target>Guardar</target>
+            </trans-unit>
+            
+            <trans-unit id="form.button.cancel">
+                <source>form.button.cancel</source>
+                <target>Cancelar</target>
+            </trans-unit>
+            <trans-unit id="form.button.edit">
+                <source>form.button.edit</source>
+                <target>Editar</target>
+            </trans-unit>
+            <trans-unit id="form.button.back">
+                <source>form.button.back</source>
+                <target>Volver</target>
+            </trans-unit>
+            
+             <trans-unit id="form.integer.placeholder">
+                <source>form.integer.placeholder</source>
+                <target>Solo números sin signos ni espacios</target>
+            </trans-unit>
+            <trans-unit id="form.alphanumeric.placeholder">
+                <source>form.alphanumeric.placeholder</source>
+                <target>Debe ser único, solo alfanuméricos</target>
+            </trans-unit>
+            <trans-unit id="form.select.placeholder">
+                <source>form.select.placeholder</source>
+                <target>Seleccione...</target>
+            </trans-unit>
+            <trans-unit id="odontogram.show.type">
+                <source>odontogram.show.type</source>
+                <target>Tipo Odontograma:</target>
+            </trans-unit>
+            <trans-unit id="odontogram.show.type.adult">
+                <source>odontogram.show.type.adult</source>
+                <target>Adulto</target>
+            </trans-unit>
+            <trans-unit id="odontogram.show.type.kid">
+                <source>odontogram.show.type.kid</source>
+                <target>Niño</target>
+            </trans-unit>
+            <trans-unit id="odontogram.show.tooth_region">
+                <source>odontogram.show.tooth_region</source>
+                <target>Diente  Cara</target>
+            </trans-unit>
+            <trans-unit id="odontogram.show.diagnostics">
+                <source>odontogram.show.diagnostics</source>
+                <target>Diagnóstico</target>
+            </trans-unit>
+            <trans-unit id="odontogram.adddiagnostic.placeholder">
+                <source>odontogram.adddiagnostic.placeholder</source>
+                <target>Ingrese Diagnóstico</target>
+            </trans-unit>
+            <trans-unit id="odontogram.adddiagnostic.nodiagnosis">
+                <source>odontogram.adddiagnostic.nodiagnosis</source>
+                <target>No Diagnóstico</target>
+            </trans-unit>
+            <trans-unit id="modal_tooth_already_selected">
+                <source>modal_tooth_already_selected</source>
+                <target>La combinación diente y región ya ha sido agregada.</target>
+            </trans-unit>
+            <trans-unit id="modal_odontogram_change_type">
+                <source>modal_odontogram_change_type</source>
+                <target>¿Está seguro que desea cambiar el tipo de odontograma, los dientes agregados serán removidos?</target>
+            </trans-unit>
+        	<trans-unit id="modal.odontogram.listbase.warning.title">
+                <source>modal.odontogram.listbase.warning.title</source>
+                <target>¡Aviso!</target>
+            </trans-unit>
+            <trans-unit id="modal_odontogram_close_button">
+                <source>modal_odontogram_close_button</source>
+                <target>Cerrar</target>
+            </trans-unit>
+            <trans-unit id="modal_odontogram_confirm_button">
+                <source>modal_odontogram_confirm_button</source>
+                <target>Confirmar</target>
+            </trans-unit>
+            <trans-unit id="modal_odontogram_title_confirm">
+                <source>modal_odontogram_title_confirm</source>
+                <target>Confirmar</target>
+            </trans-unit>
+        	<trans-unit id="modal.pricing.listbase.warning.title">
+                <source>modal.pricing.listbase.warning.title</source>
+                <target>¡Error!</target>
+            </trans-unit>
+            <trans-unit id="modal_pricing_lesser_zero">
+                <source>modal_pricing_lesser_zero</source>
+                <target>El Precio Actual debe ser mayor a cero (0,00)</target>
+            </trans-unit>
+            <trans-unit id="modal_cost_lesser_zero">
+                <source>modal_cost_lesser_zero</source>
+                <target>El Costo debe ser mayor a cero (0,00)</target>
+            </trans-unit>
+            <trans-unit id="modal_pricing_close_button">
+                <source>modal_pricing_close_button</source>
+                <target>Cerrar</target>
+            </trans-unit>
+            <trans-unit id="odontogram.field.day">
+                <source>odontogram.field.day</source>
+                <target>Día</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

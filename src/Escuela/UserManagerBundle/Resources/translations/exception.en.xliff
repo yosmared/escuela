@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+        	<trans-unit id="exception.404.error">
+                <source>exception.404.error</source>
+                <target>Page not found</target>
+            </trans-unit>
+            <trans-unit id="exception.404.error.info">
+                <source>exception.404.error.info</source>
+                <target>The page entered could not be procesed, please check out and try again.</target>
+            </trans-unit>
+            <trans-unit id="exception.500.error">
+                <source>exception.500.error</source>
+                <target>Internal error</target>
+            </trans-unit>
+            <trans-unit id="exception.500.error.info">
+                <source>exception.500.error.info</source>
+                <target>an internal error occurred while attempting to perform this command, contact the administrator.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

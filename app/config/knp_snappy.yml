@@ -1,0 +1,5 @@
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     %kernel.root_dir%/../bin/wkhtmltox/bin/wkhtmltopdf
+        options:    []

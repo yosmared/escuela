@@ -1,0 +1,48 @@
+{% extends 'EscuelaCommonsBundle:Base:layout-base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+	<link href="{{ asset('bundles/commons/css/login.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{# Page title and heading  #}
+
+{% set page_title="system.access" %}
+
+{% block content %}
+	
+<div class="container">
+	<div class="form-box">
+		<form action="{{ path("_security_check") }}" class="form-signin" method="post" id="login"> 
+			<h2 class="form-signin-heading title">{{ page_title|trans }}</h2>
+			<hr>
+			{% block flash %}
+    				{#% include "EscuelaCommonsBundle::flashes.html.twig" %#} 
+  			{% endblock %}
+			{% if error %}
+	        	<div class="error alert alert-danger">{{ error.message|trans({},'login') }}</div>
+	    	{% endif %}	
+			<input type="text" class="form-control" placeholder="{{ "username"|trans({},'login') }}" id="username" name="_username" value="{{ last_username }}" required="required" required autofocus /> 
+			<input type="password" class="form-control"	placeholder="{{ "password"|trans({},'login') }}" id="password" name="_password" required="required" />
+			<label class="checkbox"> 
+				<input	type="checkbox" id="remember_me" name="_remember_me" > {{ "remember.me"|trans({},'login') }}
+			</label>
+		
+			<label for=""><a href="{{ path("user_forgotpassword") }}">{{ "forgot.password"|trans({},'login') }}</a></label>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">{{ "login"|trans({},'login') }}</button>
+		</form>
+	</div>	
+</div>
+{% endblock %}
+		{% block footer %}
+		<div class="container">
+	    <div class="row clearfix">
+	    	<div class="col-md-12 column well">
+			   <div id="copyright">	Copyright © 2013 {{ "footer.rights.reserved"|trans({},"layout") }}
+			   </div>
+			   
+			</div>
+		</div>
+</div>
+		
+		{% endblock %}

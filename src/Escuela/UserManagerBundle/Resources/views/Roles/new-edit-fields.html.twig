@@ -1,0 +1,277 @@
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+    {{ form_label(form_object.name, 'form.role.name'|trans, {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.name) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.name) }}</small>
+            </div>
+        {%  endif %}
+        {{ form_widget(form_object.name, {'attr': {'class': 'form-control', 'placeholder': 'form.role.name'|trans, 'required': 'required'}}) }}
+    </div>              
+</div>
+
+{# Description #}
+<div class="form-group">
+    {{ form_label(form_object.description, 'form.role.description'|trans, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-7">
+    {% if form_errors(form_object.description) %}
+        <div class="alert alert-danger form-validate-small">
+          <small>{{ form_errors(form_object.description) }}</small>
+        </div>
+    {%  endif %}
+        {{ form_widget(form_object.description, {'attr': {'class': 'form-control', 'placeholder': 'form.role.description'|trans}}) }}
+    </div>              
+</div>
+
+
+{# Permission list #}
+<div class="form-group">
+
+<div class="row">
+	{{ form_label(form_object.description, 'form.role.title.manage.permission'|trans, {'label_attr': {'class': 'col-md-4 control-label required'}}) }}
+</div>
+
+<style>
+.col-md-5 {
+	width: 40%;
+	padding-right: 0px;
+}
+.col-md-7 {
+	padding-left: 0px;
+	text-align: center;
+}
+.col-md-2 {
+	width: 12%;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+</style>
+
+<div class="row">
+	<div class="col-md-5"><strong>{{ "form.role.servicename"|trans }}</strong></div>
+	<div class="col-md-7"><strong>{{ "form.role.permissions"|trans }}</strong></div>
+</div>
+<div class="row">
+	<div class="col-md-5"></div>
+	<div class="col-md-2"><strong>{{ "form.role.permission.view"|trans }}</strong></div>
+	<div class="col-md-2"><strong>{{ "form.role.permission.edit"|trans }}</strong></div>
+	<div class="col-md-2"><strong>{{ "form.role.permission.create"|trans }}</strong></div>
+	<div class="col-md-2"><strong>{{ "form.role.permission.delete"|trans }}</strong></div>
+	<div class="col-md-2"><strong>{{ "form.role.permission.all"|trans }}</strong></div>
+</div>
+
+{% set prefix = "softclear_usermanager_modules" %}
+{% for m in modules %}
+	{% set module=m.module %}
+	{% set bitmask=m.bitmask %}
+
+	{% set view="" %}
+	{% set edit="" %}
+	{% set delete="" %}
+	{% set create="" %}
+	{% set owner="" %}
+	{% set disabledview="" %}
+	{% set disabled="" %}
+
+	{% for bit in bitmask %}
+		{% if bit==4 %}
+			{% set edit="checked" %}
+			{% set disabledview="disabled" %}
+		{% endif %}
+		{% if bit==1 %}
+			{% set view="checked" %}
+		{% endif %}
+		{% if bit==8 %}
+			{% set delete="checked" %}
+		{% endif %}
+		{% if bit==2 %}
+			{% set create="checked" %}
+		{% endif %}
+		{% if bit==128 %}
+			{% set owner="checked" %}
+			{% set disabledview="disabled" %}
+			{% set disabled="disabled" %}
+		{% endif %}
+	{% endfor %}
+
+	{% if module.serviceid=="softclear.softodonto.electronicjournal" %}
+		{% set disabledview="disabled" %}
+		{% set disabled="disabled" %}
+
+<div class="row">
+	<div class="col-md-5">{{ module.servicename }}</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_view" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]" }}" value="1" {{ view }} {{ disabledview }}/>
+	</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_edit" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]" }}" value="4" {{ edit }} {{ disabled }}/>
+	</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_create" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]"  }}" value="2" {{ create }} {{ disabled }}/>
+	</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_delete" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]"  }}" value="8" {{ delete }} {{ disabled }}/>
+	</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_owner" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]"  }}" value="128" {{ owner }} />
+	</div>
+</div>
+
+	{% else %}
+<div class="row">
+	<div class="col-md-5">{{ module.servicename }}</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_view" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]" }}" value="1" {{ view }} {{ disabledview }}/>
+	</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_edit" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]" }}" value="4" {{ edit }} {{ disabled }}/>
+	</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_create" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]"  }}" value="2" {{ create }} {{ disabled }}/>
+	</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_delete" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]"  }}" value="8" {{ delete }} {{ disabled }}/>
+	</div>
+	<div class="col-md-2">
+		<input type="checkbox" id="{{ module.serviceclass~"_owner" }}" name="{{ prefix~"["~module.serviceclass|lower~"][]"  }}" value="128" {{ owner }} />
+	</div>
+</div>
+	{% endif %}
+{% endfor %}
+     
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	   $("input:checkbox").click(function(event){
+		
+		obj = $(this);
+
+		switch(obj.val()){
+
+			case '1': /*view*/
+
+				var str = obj.attr("id");
+				var arr = str.split("_");
+				if($("#"+arr[0]+"_create").is(":checked") || $("#"+arr[0]+"_delete").is(":checked") )
+				{  
+					var str = obj.attr("id");
+					var arr = str.split("_");
+	
+					obj.prop("checked","checked");	
+				}
+				
+			break;
+			case '4': /*edit*/
+
+				var str = obj.attr("id");
+				var arr = str.split("_");
+				if(obj.is(":checked"))
+				{  
+					
+					$("#"+arr[0]+"_view").attr("disabled","disabled");	
+				}else{
+
+  					if(obj.is(":checked")==false && ($("#"+arr[0]+"_create").is(":checked") || $("#"+arr[0]+"_create").is(":checked"))){
+
+  						$("#"+arr[0]+"_view").removeAttr("disabled");
+  						$("#"+arr[0]+"_view").prop("checked","checked");
+  					
+  	  	  			}else{
+					
+						$("#"+arr[0]+"_view").removeAttr("disabled");
+						
+  	  	  			}
+				}
+				
+			break;
+
+			case '2': /*create*/
+
+				var str = obj.attr("id");
+				var arr = str.split("_");
+				
+				if(obj.is(":checked"))
+				{  
+					
+
+					$("#"+arr[0]+"_view").prop("checked", true);	
+					$("#"+arr[0]+"_view").prop("ReadOnly", true);
+
+				}else if($("#"+arr[0]+"_delete").is(":checked")==false){
+  
+					/*var str = obj.attr("id");
+					var arr = str.split("_");*/
+
+					$("#"+arr[0]+"_view").prop("checked", false);
+					$("#"+arr[0]+"_view").prop("ReadOnly",false);
+				}
+				
+				
+			break;
+
+			case '8': /*Delete*/
+
+				var str = obj.attr("id");
+				var arr = str.split("_");
+				
+				if(obj.is(":checked"))
+				{  
+					var str = obj.attr("id");
+					var arr = str.split("_");
+
+					$("#"+arr[0]+"_view").prop("checked", true);	
+					$("#"+arr[0]+"_view").prop("ReadOnly", true);
+
+				}else if($("#"+arr[0]+"_create").is(":checked")==false){
+
+					$("#"+arr[0]+"_view").prop("checked", false);
+					$("#"+arr[0]+"_view").prop("ReadOnly",false);
+				}
+
+			break;
+
+			case '128': /*all*/
+
+				if(obj.is(":checked"))
+				{  
+					var str = obj.attr("id");
+					var arr = str.split("_");
+
+					$("#"+arr[0]+"_view").prop("disabled", true);
+					$("#"+arr[0]+"_edit").prop("disabled", true);
+					$("#"+arr[0]+"_create").prop("disabled", true);
+					$("#"+arr[0]+"_delete").prop("disabled", true);	
+					
+
+				}else{
+  
+					var str = obj.attr("id");
+					var arr = str.split("_");
+					//alert(arr[0].toLowerCase());
+					if(arr[0].toLowerCase()=="electronicjournalservice"){
+
+						$("#"+arr[0]+"_view").prop("disabled", true);
+						$("#"+arr[0]+"_edit").prop("disabled", true);
+						$("#"+arr[0]+"_create").prop("disabled", true);
+						$("#"+arr[0]+"_delete").prop("disabled", true);	
+
+					}else{
+					
+						$("#"+arr[0]+"_view").prop("disabled", false);
+						$("#"+arr[0]+"_edit").prop("disabled", false);
+						$("#"+arr[0]+"_create").prop("disabled", false);
+						$("#"+arr[0]+"_delete").prop("disabled", false);	
+					}
+				}
+
+			break;
+
+		}
+
+	   });
+
+});
+</script>

@@ -1,0 +1,3 @@
+escuela_usermanager:
+    resource: "@EscuelaUserManagerBundle/Controller"
+    type: annotation

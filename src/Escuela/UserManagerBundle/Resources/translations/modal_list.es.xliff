@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+        	<trans-unit id="modal.listbase.warning.title">
+                <source>modal.listbase.warning.title</source>
+                <target>¡Aviso!</target>
+            </trans-unit>
+            <trans-unit id="modal_description_checkboxes">
+                <source>modal_description_checkboxes</source>
+                <target>Seleccione aquellos elementos que desee eliminar</target>
+            </trans-unit>
+            <trans-unit id="modal_title_confirm">
+                <source>modal_title_confirm</source>
+                <target>Confirmar</target>
+            </trans-unit>
+            <trans-unit id="modal_description_yousure">
+                <source>modal_description_yousure</source>
+                <target>¿Está seguro que desea eliminar los elementos seleccionados?</target>
+            </trans-unit>
+            <trans-unit id="modal_description_yousure_single">
+                <source>modal_description_yousure_single</source>
+                <target>¿Está seguro que desea eliminar el elemento seleccionado?</target>
+            </trans-unit>
+            <trans-unit id="modal_close_button">
+                <source>modal_close_button</source>
+                <target>Cerrar</target>
+            </trans-unit>
+            <trans-unit id="modal_confirm_button">
+                <source>modal_confirm_button</source>
+                <target>Confirmar</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

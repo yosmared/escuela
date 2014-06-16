@@ -1,0 +1,21 @@
+#### Diagnotics ####
+
+# titles
+'diagnostic.new.title.name': Create Diagnostic
+'diagnostic.edit.title.name': Edit Diagnostic
+'diagnostic.show.title.name': Diagnostic Detail
+'diagnostic.list.title.name': Diagnostic List
+
+# new, edit, show form field names
+'diagnostic.name': Name
+'diagnostic.description': Description
+'diagnostic.treatmentsid': Treatments
+'diagnostic.name.placeholder': Name
+'diagnostic.description.placeholder': Description
+'diagnostic.treatmentsid.placeholder.empty': Fill in treatments
+'diagnostic.treatmentsid.placeholder.no_suggestions': No suggestions
+
+# form errors
+'diagnostic.error.name.not_blank': Enter diagnostic name
+'diagnostic.error.name_exists': Diagnostic name already exists
+'diagnostic.error.treatmentsid.not_blank': Select at least one applicable treatment

@@ -1,0 +1,34 @@
+{% extends 'EscuelaCommonsBundle:Base:layout-base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+	<link href="{{ asset('bundles/commons/css/login.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{# Page title and heading  #}
+
+{% set page_title="form.recover.title" %}
+
+{% block content %}
+<div class="container">
+	<div class="form-box">
+
+		  <form action="{{ path("user_validate_username") }}" class="form-signin" method="post" id="login"> 
+		  
+			<h2 class="form-signin-heading title">{{ page_title|trans }}</h2>
+			{% if form_errors(form) %}
+	        	<div class="error alert alert-danger">{{ form_errors(form)}}</div>
+	    	{% endif %}	
+			<hr>
+			{{ form_widget(form.username,{'attr': {'class': 'form-control', 'placeholder':  "username"|trans({},'login'), 'required': 'required'}}) }}
+			 		
+			<div class="form-group">
+			<div class="col-sm-6"><button class="form-control btn btn-primary" type="submit">{{ "form.recover.button.acept"|trans }}</button></div>
+			<div class="col-sm-6"><a href="{{ path('recover_cancel') }}" class="form-control btn btn-default" role="button" >{{ "form.recover.button.cancel"|trans }}</a></div>
+			</div>
+			<div class="hidden">{{ form_rest(form) }}</div>
+		</form>
+		
+	</div>	
+</div>
+{% endblock %}

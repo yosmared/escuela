@@ -1,0 +1,12 @@
+{% extends 'SoftclearSoftOdontoBundle::layout.html.twig' %}
+
+{% set page_title="exception.404.error"|trans({}, "exception") %}
+{% block navbar_header %}{% endblock %}
+{% block content %}
+<div id="main-content" class="col-md-9 well">
+   <h2>{{ page_title }}</h2>
+   {% block side_navbar%}{% endblock %}
+   <h4>{{"exception.404.error.info"|trans({}, "exception")}}</h4>    
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'EscuelaCommonsBundle:Base:edit-base.html.twig' %}
+
+{# Page title and heading	 #}
+{% set page_title="form.user.edit.title" %}
+
+{% block form_fields %}
+    {% set form_object= edit_form %}
+	{% include 'EscuelaUserManagerBundle:Users:new-edit-fields.html.twig' %}    
+{% endblock %}
+
+{% block action_buttons %}
+	{# Si el usuario autenticado tiene permisos para ver... #}
+	{% if (is_granted('VIEW',service)) %}
+		{# ...muestra la lista de usuarios #}
+		{% set cancel_url = path('user_list') %}
+	{# sino... #}
+	{% else %}
+		{# ...muestra los datos del usuario #}
+    	{% set cancel_url = path('user_show', {'id': entity.id}) %}
+    	{# tambien se puede usar: path('user_show', {'id': app.user.id}) #}
+	{% endif %}
+	{{ parent() }}
+{% endblock %}	

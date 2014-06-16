@@ -1,0 +1,98 @@
+{% extends 'EscuelaCommonsBundle:Base:list-base.html.twig' %}
+{% trans_default_domain "lists" %}
+{# Page title and heading  #}
+{% set page_title="list.user.title" %}
+
+{# New create path to be shown outside this template #}
+{% set new_path= path('user_new') %}
+
+{# New search path to be shown outside this template #}
+{% set search= path('user_search') %}
+
+{# New create path to be shown outside this template #}
+{% set deletes_path= path('user_deletes') %}
+
+{% set list_path= path('user_list') %}
+
+
+
+{# Add and delete selected actions for entity rol #}
+{% block entity_add_del %}
+{% if is_granted('CREATE',service) %}
+	<a class="btn btn-default btn-sm" href="{{ new_path }}"><i class="fa fa-plus"></i> {{ "list.button.add"|trans }}</a>
+{% endif %}
+{% if is_granted('DELETE',service) %}
+	{{ form_widget(list_form.deleteall_btn, { 'label': 'list.button.delete'|trans, 'attr': {'class': 'btn btn-default btn-sm'}}) }}
+{% endif %}
+{% endblock %}
+
+
+{# Fieldnames #}
+{% block entity_fieldnames %}
+    {% if entities|length > 1 %}
+    <tr>
+        <th>&nbsp;</th>
+        <th>{{ knp_pagination_sortable(entities, 'list.user.field.username'|trans, 'p.username') }}</th>
+        <th>{{ "list.user.field.name"|trans }}</th>
+        <th>{{ "list.user.field.role"|trans }}</th>
+        <th>{{ "list.field.actions"|trans }}</th>
+    </tr>
+    {% endif %}
+{% endblock %}
+
+{# Field content #}
+{% block entity_fields %}
+    {% for entity in entities if entity.id!=app.user.id %}
+        <tr>
+			<td><input name="listelem[]" id="listelem" type="checkbox" value="{{ entity.id }}" /></td>
+            <td>{{ entity.username }}</td>
+            <td>{{ entity.name }} {{ entity.lastname }}</td>
+            <td>{% set i=0 %}
+            	{% set size = entity.roles | length %}
+                {%  for role in entity.roles %}
+                
+                   {%  set i = i + 1 %}
+                   {% if i<size %}
+
+                   		{{ role.name ~ ',' }}
+                   		
+                   {% elseif i ==size %}
+                   		
+                   		{{ role.name  }}
+                   		
+                   {% endif %}
+				   
+            	{% endfor %}
+            	</td>
+            <td width="20%">
+                <ul id="action-list">
+                {% if is_granted('VIEW',service) %}
+                    <li><a href="{{ path('user_show', { 'id': entity.id }) }}" title="{{ "list.tooltip.detail"|trans }}"><i class="fa fa-eye fa-3 fa-lg"></i></a></li>
+                {% endif %}
+				{% if is_granted('EDIT',service) %} 
+                    <li><a href="{{ path('user_edit', { 'id': entity.id }) }}" title="{{ "list.tooltip.edit"|trans }}"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>                  
+                {% endif %}
+				{% if is_granted('EDIT',service) %}    
+                    <li>
+                        {% if entity.isenabled  == 1 %}
+                        <a href="{{ path('user_inactive', { 'id': entity.id, 'page': current_page }) }}" title="{{ "list.tooltip.lock"|trans }}"><i class="fa fa-lock fa-lg"></i></a>
+                        {%  else %}
+                        <a href="{{ path('user_active', { 'id': entity.id, 'page': current_page }) }}" title="{{ "list.tooltip.unlock"|trans }}"><i class="fa fa-unlock fa-lg"></i></a>
+                        {% endif %}
+                    </li> 
+                {% endif %}
+				{% if is_granted('DELETE',service) %}                  
+                    <li><a name="delete_action" href="{{ path('user_delete', { 'id': entity.id, 'page': current_page }) }}" title="{{ "list.tooltip.delete"|trans }}"><i class="fa fa-times fa-lg"></i></a></li>                   
+                {% endif %}
+                </ul>
+            </td>
+        </tr> 
+    {% else %}
+        {% block no_results %}
+            {{parent()}}
+        {% endblock %}
+    {% endfor %}
+<tr ><td colspan=5>
+    {{ knp_pagination_render(entities) }}
+ </td><tr>  
+{% endblock %}

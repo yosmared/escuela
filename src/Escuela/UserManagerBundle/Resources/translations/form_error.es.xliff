@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="form_error.roles.choose_permission">
+                <source>form_error.roles.choose_permission</source>
+                <target>Seleccione al menos un permiso</target>
+            </trans-unit>
+            <trans-unit id="form_error.roles.name_exists">
+                <source>form_error.roles.name_exists</source>
+                <target>Este nombre de rol ya está registrado, por favor escriba otro</target>
+            </trans-unit>
+            <trans-unit id="form_error.diagnostics.name_exists">
+                <source>form_error.diagnostics.name_exists</source>
+                <target>Este diagnóstico ya extiste, por favor escriba otro</target>
+            </trans-unit>
+            <trans-unit id="form_error.diagnostics.choose_treatment">
+                <source>form_error.diagnostics.choose_treatment</source>
+                <target>Seleccione al menos un tratamiento aplicable</target>
+            </trans-unit>            
+            <trans-unit id="form_error.question.name_exists">
+                <source>form_error.question.name_exists</source>
+                <target>Esta pregunta ya existe previamente, por favor escriba otra</target>
+            </trans-unit>
+            <trans-unit id="form_error.question.choose_question">
+                <source>form_error.question.choose_question</source>
+                <target>Seleccione al menos una pregunta</target>
+            </trans-unit>
+            <trans-unit id="form_error.question.option_required">
+                <source>form_error.question.option_required</source>
+                <target>Se requiere al menos una opción</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,5 @@
+escuela_commons:
+    resource: "@EscuelaCommonsBundle/Resources/config/routing.yml"
+
+escuela_user_manager:
+    resource: "@EscuelaUserManagerBundle/Resources/config/routing.yml"

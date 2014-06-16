@@ -1,0 +1,28 @@
+#### QuestionGroup ####
+
+# List
+'questiongroup.unassigned_user': No asignado
+'questiongroup.field.alias': Alias
+'questiongroup.field.lastedit': Última modificación
+'questiongroup.field.assigned_questions': Preguntas asignadas
+'questiongroup.field.user': Usuarios(s)
+'questiongroup.show.title': Detalle de Grupo de Preguntas
+'questiongroup.field.questions': Preguntas
+
+#Create
+'form.questiongroup.create.title': Crear Grupo de Preguntas
+'form.questiongroup.name': Alias
+'form.questiongroup.placeholder.name': Nombre corto para grupo de preguntas
+'questiongroup.question.suggest.title': Lista de Preguntas
+'questiongroup.questionsid.placeholder.empty': Ingrese Preguntas
+'questiongroup.questionsid.no_suggestions': No hay sugerencias
+'questiongroup.questiongroupid.placeholder.empty': Seleccione Grupo de Preguntas
+'questiongroup.questiongroup.suggest.title': Grupos de preguntas
+
+# Edit
+'form.questiongroup.edit.title': Editar Grupo de Preguntas
+'form.questiongroup.edit.already_exists': Alias registrado, escriba otro
+
+#Messages
+'questiongroup.no_questiongroup': No hay grupo de preguntas asignado
+'questiongroup.no_question': No hay preguntas asignadas

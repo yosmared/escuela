@@ -1,0 +1,9 @@
+{% block flash %}	
+	{% for key,flashMessages in app.session.flashbag %}		
+		{% for flashMessage in flashMessages %}
+			<div id="flash" class="col-md-9 alert alert-{{ key }}">
+	        	{{ flashMessage|trans|raw }}
+	        </div>
+		{% endfor %}
+    {% endfor %}
+{% endblock %}

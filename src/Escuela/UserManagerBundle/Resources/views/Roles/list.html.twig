@@ -1,0 +1,66 @@
+{% extends 'EscuelaCommonsBundle:Base:list-base.html.twig' %}
+
+{# Page title and heading	 #}
+{% set page_title="list.role.title" %}
+
+{# New create path to be shown outside this template #}
+{% set new_path= path('roles_new') %}
+
+{# New search path to be shown outside this template #}
+{% set search = path('roles_search') %}
+
+{# New create path to be shown outside this template #}
+{% set deletes_path= path('roles_deletes') %}
+
+{% set list_path= path('roles_list') %}
+
+{% trans_default_domain "lists" %}
+
+{# Add and delete selected actions for entity rol #}
+{% block entity_add_del %}
+{% if is_granted('CREATE',service) %}
+	<a class="btn btn-default btn-sm" href="{{ new_path }}"><i class="fa fa-plus"></i> {{ "list.button.add"|trans }}</a>
+{% endif %}
+{% if is_granted('DELETE',service) %}
+	{{ form_widget(list_form.deleteall_btn, { 'label': 'list.button.delete'|trans, 'attr': {'class': 'btn btn-default btn-sm'}}) }}
+{% endif %}
+{% endblock %}
+
+
+{# Fieldnames #}
+{% block entity_fieldnames %}
+	<tr>
+		<th>&nbsp;</th>
+		<th>{{ "list.role.field.name"|trans }}</th>
+		<th>{{ "list.role.field.description"|trans }}</th>
+		<th>{{ "list.field.actions"|trans }}</th>
+	</tr>
+{% endblock %}
+
+{# Field content #}
+{% block entity_fields %}
+	{% for entity in entities %}
+	<tr>
+		<td><input name="listelem[]" id="listelem" type="checkbox" value="{{ entity.id }}" /></td>
+		<td>{{ entity.name }} </td>
+		<td>{{ entity.description }}</td>
+		<td width="20%">
+			<ul id="action-list">
+			{% if is_granted('VIEW',service) %}
+				<li><a href="{{ path('roles_show', { 'id': entity.id }) }}" title="{{ "list.tooltip.detail"|trans }}"><i class="fa fa-eye fa-3 fa-lg"></i></a></li>
+			{% endif %}
+			{% if is_granted('EDIT',service) %}
+				<li><a href="{{ path('roles_edit', { 'id': entity.id }) }}" title="{{ "list.tooltip.edit"|trans }}"><i class="fa fa-pencil-square-o fa-lg" ></i></a></li>					
+			{% endif %}
+			{% if is_granted('DELETE',service) %}
+				<li><a name="delete_action" href="{{ path('roles_delete', { 'id': entity.id, 'page': current_page }) }}" title="{{ "list.tooltip.delete"|trans }}"><i class="fa fa-times fa-lg"></i></a></li>					
+			{% endif %}
+			</ul>
+		</td>
+	</tr>
+	{% endfor %}
+<tr><td colspan="4">
+    {{ knp_pagination_render(entities) }}
+</td><tr>  	
+	 
+{% endblock %}

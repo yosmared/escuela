@@ -1,0 +1,343 @@
+.container {
+	max-width: 940px;
+}
+/*Menu Tunning*/
+.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
+    margin-top: 0;
+}
+.navbar{
+    margin-bottom: 8px;
+}
+
+.navbar .sub-menu:before {
+    border-bottom: 7px solid transparent;
+    border-left: none;
+    border-right: 7px solid rgba(0, 0, 0, 0.2);
+    border-top: 7px solid transparent;
+    left: -7px;
+    top: 10px;
+}
+.navbar .sub-menu:after {
+    border-top: 6px solid transparent;
+    border-left: none;
+    border-right: 6px solid div#fff;
+    border-bottom: 6px solid transparent;
+    left: 10px;
+    top: 11px;
+    left: -6px;
+}
+div#main-content{
+	background-color: #f8f8f8;    
+	margin-left: 12px;
+	max-width: 73.7%;
+}
+
+div#flash{
+    margin: 0em 0em .8em .8em;
+    max-width: 73.7%;
+}
+
+div#main-content table{
+    width: 100%;
+} 
+
+div#side-navbar{
+    /*max-width: 25%;*/
+}
+
+div.jumbotron{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 10px;
+    margin-bottom: 8px;
+
+}
+.nav a:hover, .nav li.active > a {
+    background-color: #428bca !important;
+    color: #FFF !important;
+}
+.nav a:hover{
+    /*background-color: #EEEEEE !important;*/
+}
+
+.navbar-text ul{
+    list-style: none;
+    margin-bottom: 0px;
+}
+
+div#copyright   
+{    
+    color: gray;
+    font-size: .9em;    
+    margin: -10px auto -10px auto;
+    text-align: center;
+}
+
+div#copyright a,div#copyright a:hover, div#copyright a:focus{
+    color: gray;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*Media queries*/
+
+
+@media screen and (max-width : 400px) and (max-width : 768px)   and (max-width : 650px){ 
+    div#main-content{
+        max-width: 100%;
+        margin-left: 0px;
+    }
+
+     div#main-content input{
+
+     }
+}
+
+@media screen and (max-width : 768px){
+    div#main-content{
+        max-width: 100%;
+        margin: 0px 0px 10px 0px;
+    }
+}
+
+@media screen and (max-width : 850px){
+    div#main-content{
+        max-width: 100%;
+        margin: 0px 0px 10px 0px;
+    }
+}
+
+
+@media screen and (max-width : 400px) { 
+    div#main-content{
+        font-size: .9em;
+    }    
+}
+
+@media screen and (max-width: 320px){
+    div#main-content{
+        font-size: .9em;
+    } 
+
+    div#main-content table{
+        width: 100%;
+    }
+}
+
+ul#action-list li{
+    display: inline-block;
+    margin: 0px;
+}
+ul#action-list{
+    list-style: none;
+    margin: 0px;
+    -padding-start: 0px;
+    -webkit-padding-start: 0px;
+    -moz-padding-start: 0px;
+    -ms-padding-start: 0px;
+}
+ul#action-list a, ul#action-list a:hover, ul#action-list a:focus{
+    color: #333333;
+    text-decoration: none;
+}
+
+.table thead>tr>th, .table tbody>tr>th, .table tfoot>tr>th, .table thead>tr>td, .table tbody>tr>td, .table tfoot>tr>td{
+    padding: 4px;
+}
+
+table#entity-list{
+    table-layout: auto; 
+    width: 100%;
+}
+
+table#entity-list tr td{
+    word-wrap: break-word;
+}
+
+div#upper-toolkit #lookup{
+    padding-left: 0px;    
+}
+
+#add-del, #add-del span{
+    text-align: right;
+    display: inline-block;
+}
+
+#options-btn {
+    float: none;
+    padding: 7px;
+}
+
+.form-validate-small{
+    padding: 3px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.form-validate-small li{
+    list-style-type: none;
+}
+
+/* estilo para un div escondido, 
+	para los elementos de un formulario no pintados por twig */
+.hidden {
+	visibility: hidden;	
+}
+
+/* No records shown in list */
+#noentities{
+    margin: 25px 0px 25px 0px;
+    text-align: center;
+}
+
+
+#ms-sel-ctn-0{
+    width: 320px !important;
+}
+
+#ms-sel-ctn-0 div.ms-sel-item{
+    background-color: #3276b1;
+    border-color: #285e8e;    
+}
+
+/* inicio - estilo para las pestañas */
+.nav-tabs > li, .nav-pills > li {
+	display:inline-block;
+	*display:inline; /* ie7 fix */
+	text-align:center;
+	width: 120px;
+}
+/* fin - estilo para las pestañas */
+
+/** cursor de lupa en caja de búsqueda */
+.input-group-addon:hover {
+	cursor: pointer;
+}
+
+/** div para tool tip */
+.toolTipText {
+	z-index: 999;
+	position: absolute;
+	margin: 0;
+	display: none;
+	background-color: white;
+}
+#ayuda:hover {
+	cursor: pointer;
+}
+
+/* Fixes bootstrap issue that overlaps style: https://github.com/twbs/bootstrap/issues/10030*/
+.modal-backdrop.fade {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.modal-backdrop.fade.in {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.modal.in .modal-dialog {
+    margin-top: 10%;
+}
+
+/* Red asterisk after each required label*/
+label.required:after{
+    content: "*";
+    color: #C90400;
+}
+
+/* Required fields legend*/
+p.text-right span{
+    color:  #C90400;
+}
+
+
+/*Loading gif image*/
+#target_list_q{
+    margin: -10px 0 10px;
+}
+
+
+#loading { 
+    display: none;
+    margin: -10px 0px 0px 10px;
+}
+
+/* Suggest dropdown */
+.ms-ctn .ms-trigger {
+    border: none !important;    
+    background: none !important;
+}
+
+/*Exportar datos del paciente*/
+.tablaExport {
+    color: #ffffff;
+    background-color: #428bca;
+}
+.textAreaTransparent {
+    background: transparent;
+}
+
+/* Odontogram Historic list */
+ul.nav-odon {
+    width: 80%;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+ul.nav-odon li {
+    margin: 0;
+    border-top: 1px solid #ddd;
+}
+ul.nav-odon li:first-child {
+    border-top: none;
+}
+ul.nav-odon li a {
+    margin: 0;
+    padding: 8px 16px;
+    border-radius: 0;
+}
+ul.nav-odon li.selected {
+    color: #fff;
+    background: #0088cc;
+    border: 1px solid #0088cc;
+    margin: 0;
+    padding: 8px 16px;
+    border-radius: 0;
+}
+ul.nav-odon li:first-child a, ul.nav-odon li.selected:first-child {
+    border-radius: 4px 4px 0 0;
+}
+ul.nav-odon li:last-child a, ul.nav-odon li.selected:last-child {
+    border-radius: 0 0 4px 4px;
+}
+/* Pricing list */
+ul.nav-pricing {
+    width: 80%;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+ul.nav-pricing li {
+    margin: 0;
+    border-top: 1px solid #ddd;
+}
+ul.nav-pricing li:nth-child(odd) {
+    background-color: #bebebe;
+}
+ul.nav-pricing li:first-child {
+    color: #fff;
+    background: #0088cc;
+    border: 1px solid #0088cc;
+    margin: 0;
+    padding: 8px 16px;
+    border-radius: 4px 4px 0 0;
+}
+ul.nav-pricing li:last-child {
+    border-radius: 0 0 4px 4px;
+}
+
