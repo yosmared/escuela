@@ -68,12 +68,11 @@ class LoadModuleClassData extends AbstractFixture implements OrderedFixtureInter
 	
 	public function getModulesClass(){
 		
-		return array(1=>array("en_US"=>array("modulename"=>"Access","servicename"=>"Roles Management","serviceclass"=>"RolesService","serviceid"=>'softclear.usermanager.roles',"route"=>"roles_list","order"=>1),
+		return array(1=>array("en_US"=>array("modulename"=>"Access","servicename"=>"Roles Management","serviceclass"=>"RolesService","serviceid"=>'escuela.usermanager.roles',"route"=>"roles_list","order"=>1),
 						"es_ES"=>array("modulename"=>"Acceso","servicename"=>"Gestión de Roles")),
-					2=>array("en_US"=>array("modulename"=>"Access","servicename"=>"User Management","serviceclass"=>"UserService","serviceid"=>"softclear.usermanager.user","route"=>"user_list","order"=>2),
+					2=>array("en_US"=>array("modulename"=>"Access","servicename"=>"User Management","serviceclass"=>"UserService","serviceid"=>"escuela.usermanager.user","route"=>"user_list","order"=>2),
 						"es_ES"=>array("modulename"=>"Acceso","servicename"=>"Gestión de Usuarios")),
-					3=>array("en_US"=>array("modulename"=>"WorkShift","servicename"=>"Workshift Management","serviceclass"=>"WorkshiftService","serviceid"=>"softclear.icecream.workshift","route"=>"workshift","order"=>3),
-						"es_ES"=>array("modulename"=>"Turnos","servicename"=>"Gestión de Turnos")),
+					
 	
 				);
 		

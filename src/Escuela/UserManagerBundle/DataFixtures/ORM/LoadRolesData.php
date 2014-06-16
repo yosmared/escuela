@@ -51,7 +51,7 @@ class LoadRolesData extends AbstractFixture implements OrderedFixtureInterface, 
 		
 		$role= $roleEntity->getRole();
 
-		$aclService = $this->container->get('softclear.usermanager.acl');
+		$aclService = $this->container->get('escuela.usermanager.acl');
 		$modules = $manager->getRepository('EscuelaUserManagerBundle:ModuleClass')->findAll();
 		
 		
