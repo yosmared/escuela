@@ -1,0 +1,7 @@
+parameters:
+#    escuela_core.example.class: Escuela\CoreBundle\Example
+
+services:
+#    escuela_core.example:
+#        class: %escuela_core.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

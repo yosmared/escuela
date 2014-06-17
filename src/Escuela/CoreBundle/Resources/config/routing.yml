@@ -1,0 +1,3 @@
+escuela_core_homepage:
+    resource: "@EscuelaCoreBundle/Controller"
+    type: annotation

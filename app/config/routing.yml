@@ -1,3 +1,6 @@
+escuela_core:
+    resource: "@EscuelaCoreBundle/Resources/config/routing.yml"
+
 escuela_commons:
     resource: "@EscuelaCommonsBundle/Resources/config/routing.yml"
 

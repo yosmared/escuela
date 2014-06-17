@@ -1,0 +1,14 @@
+{% extends 'EscuelaCommonsBundle:Base:new-base.html.twig' %}
+
+{% set page_title="Crear Turno" %}
+
+{% block form_fields %}
+	{% set form_object= form %}
+	{% include 'EscuelaCoreBundle:Student:new-edit-fields.html.twig' %}
+{% endblock %}
+
+{% block action_buttons %}
+	{% set cancel_url= path('student_list') %}
+	{{ parent() }}
+{% endblock %}
+

@@ -23,6 +23,7 @@ class AppKernel extends Kernel
         	new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new Escuela\UserManagerBundle\EscuelaUserManagerBundle(),
             new Escuela\CommonsBundle\EscuelaCommonsBundle(),
+            new Escuela\CoreBundle\EscuelaCoreBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test','staging'))) {

@@ -1,0 +1,189 @@
+
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.name, 'Nombres:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.name) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.name) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.name, {'attr': {'class': 'form-control', 'placeholder': 'Nombres'}}) }}
+    </div>			    
+</div>
+
+{# LastName #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.lastname, 'Apellidos:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.lastname) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.lastname) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.lastname, {'attr': {'class': 'form-control', 'placeholder': 'Apellidos'}}) }}
+    </div>			    
+</div>
+
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.identification, 'Cédula: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.identification) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.identification) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.identification, {'attr': {'class': 'form-control', 'placeholder': '111111111'}}) }}
+    </div>			    
+</div>
+
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.cityBirth, 'Ciudad de Nacimiento: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.cityBirth) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.cityBirth) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.cityBirth, {'attr': {'class': 'form-control', 'placeholder': 'Ciudad'}}) }}
+    </div>			    
+</div>
+
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.birthdate, 'Fecha de Nacimiento: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.birthdate) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.birthdate) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.birthdate) }}
+    </div>			    
+</div>
+
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.address, 'Dirección: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.address) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.address) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.address) }}
+    </div>			    
+</div>
+
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.createat, 'Fecha de Ingreso: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.createat) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.createat) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.createat) }}
+    </div>			    
+</div>
+
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.grade, 'Grado a cursar: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.grade) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.grade) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.grade) }}
+    </div>			    
+</div>
+
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.parents, 'Representante: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.parents) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.parents) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.parents) }}
+    </div>			    
+</div>
+
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.telephone, 'Teléfono: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.telephone) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.telephone) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.telephone) }}
+    </div>			    
+</div>
+
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.schoolOrigin, 'Plantel de procedencia: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.schoolOrigin) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.schoolOrigin) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.schoolOrigin) }}
+    </div>			    
+</div>
+
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.viruela, 'Vacunas: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.schoolOrigin) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.schoolOrigin) }}</small>
+            </div>
+        {%  endif %}
+        {{ 'Viruela' }}
+    	{{ form_widget(form_object.viruela) }}
+    	{{ 'Polio' }}
+    	{{ form_widget(form_object.polio) }}
+    	{{ 'Tifus' }}
+    	{{ form_widget(form_object.tifus) }}
+    	{{ 'Tetano' }}
+    	{{ form_widget(form_object.tetano) }}
+    	{{ 'Sarampion' }}
+    	{{ form_widget(form_object.sarampion) }}
+    </div>			    
+</div>
+
+<div class="form-group">
+	{{ form_label(form_object.disease, 'Padece de alguna enfermedad?: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.disease) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.disease) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.disease) }}
+    	{{ form_widget(form_object.explain) }}
+    </div>			    
+</div>

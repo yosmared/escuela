@@ -1,0 +1,63 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Parents list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th>Identification</th>
+                <th>Nationality</th>
+                <th>Birthdate</th>
+                <th>Address</th>
+                <th>Telephone</th>
+                <th>Gender</th>
+                <th>Profession</th>
+                <th>Addresswork</th>
+                <th>Alphabet</th>
+                <th>Representant</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('parents_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.lastname }}</td>
+                <td>{{ entity.identification }}</td>
+                <td>{{ entity.nationality }}</td>
+                <td>{% if entity.birthdate %}{{ entity.birthdate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.address }}</td>
+                <td>{{ entity.telephone }}</td>
+                <td>{{ entity.gender }}</td>
+                <td>{{ entity.profession }}</td>
+                <td>{{ entity.addressWork }}</td>
+                <td>{{ entity.alphabet }}</td>
+                <td>{{ entity.representant }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('parents_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('parents_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('parents_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

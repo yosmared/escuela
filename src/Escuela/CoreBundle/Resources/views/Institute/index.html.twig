@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Institute list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Codeschool</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Telephone</th>
+                <th>Municipality</th>
+                <th>State</th>
+                <th>Numberzone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('institute_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.codeSchool }}</td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.address }}</td>
+                <td>{{ entity.telephone }}</td>
+                <td>{{ entity.municipality }}</td>
+                <td>{{ entity.state }}</td>
+                <td>{{ entity.numberZone }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('institute_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('institute_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('institute_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
