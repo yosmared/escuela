@@ -1,7 +1,18 @@
 parameters:
-#    escuela_core.example.class: Escuela\CoreBundle\Example
+    escuela.base.class: Escuela\CoreBundle\Services\BaseService
+    escuela.core.student.class: Escuela\CoreBundle\Services\StudentService
 
 services:
-#    escuela_core.example:
-#        class: %escuela_core.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+        
+    escuela.core.base:
+        class: Escuela\CoreBundle\Services\BaseService
+        arguments: ["@doctrine.orm.entity_manager","@knp_paginator"]
+                     
+    escuela.core.form.type.student:
+         class: Escuela\CoreBundle\Form\StudentType
+         tags:
+             - { name: form.type, alias: student }
+             
+    escuela.core.student:
+        class: %escuela.core.student.class%
+        parent: escuela.core.base

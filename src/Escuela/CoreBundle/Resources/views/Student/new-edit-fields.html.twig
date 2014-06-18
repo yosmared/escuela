@@ -114,15 +114,9 @@
 {# Name #}
 {% trans_default_domain "forms" %}
 <div class="form-group">
-	{{ form_label(form_object.parents, 'Representante: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
-    <div class="col-sm-7">
-        {% if form_errors(form_object.parents) %}
-            <div class="alert alert-danger form-validate-small">
-                <small>{{ form_errors(form_object.parents) }}</small>
-            </div>
-        {%  endif %}
-    	{{ form_widget(form_object.parents) }}
-    </div>			    
+	{{ "Representante: " }}
+	
+   	    
 </div>
 
 {# Name #}

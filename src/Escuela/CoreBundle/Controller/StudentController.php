@@ -125,6 +125,7 @@ class StudentController extends Controller
         return array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
+        	'service'=>''
         );
     }
 
@@ -152,6 +153,7 @@ class StudentController extends Controller
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+        	'service'=>''
         );
     }
 

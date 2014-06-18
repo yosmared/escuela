@@ -19,9 +19,9 @@ class StudentType extends AbstractType
             ->add('lastname')
             ->add('identification')
             ->add('cityBirth')
-            ->add('birthdate')
+            ->add('birthdate','birthday',array('widget'=>'choice'))
             ->add('address')
-            ->add('createat')
+            ->add('createat','date')
             ->add('telephone')
             ->add('schoolOrigin')
             ->add('viruela')
@@ -31,8 +31,8 @@ class StudentType extends AbstractType
             ->add('sarampion')
             ->add('disease')
             ->add('explain')
-            ->add('grade')
-            ->add('parents')
+            ->add('grade','entity',array('class'=>'EscuelaCoreBundle:Grade','property' => 'name','expanded'=>false,'multiple'=>true))
+            //->add('parents')
         ;
     }
     

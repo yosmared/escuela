@@ -129,7 +129,7 @@ class Student
     /**
      * @var string
      *
-     * @ORM\Column(name="explain", type="text", nullable=true)
+     * @ORM\Column(name="`explain`", type="text", nullable=true)
      */
     private $explain;
 
@@ -583,6 +583,12 @@ class Student
     {
         return $this->grade;
     }
+    
+    public function setGrade(\Escuela\CoreBundle\Entity\Grade $grade){
+    	
+    	$this->addGrade($grade);
+    
+    } 
 
     /**
      * Add parents
