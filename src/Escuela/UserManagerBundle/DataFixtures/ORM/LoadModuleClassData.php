@@ -72,8 +72,9 @@ class LoadModuleClassData extends AbstractFixture implements OrderedFixtureInter
 						"es_ES"=>array("modulename"=>"Acceso","servicename"=>"Gestión de Roles")),
 					2=>array("en_US"=>array("modulename"=>"Access","servicename"=>"User Management","serviceclass"=>"UserService","serviceid"=>"escuela.usermanager.user","route"=>"user_list","order"=>2),
 						"es_ES"=>array("modulename"=>"Acceso","servicename"=>"Gestión de Usuarios")),
-					
-	
+					3=>array("en_US"=>array("modulename"=>"Registros","servicename"=>"Registro de Alumnos","serviceclass"=>"StudentService","serviceid"=>"escuela.core.student","route"=>"student_list","order"=>3),
+							"es_ES"=>array("modulename"=>"Registros","servicename"=>"Registro de Alumnos")),
+
 				);
 		
 	}
