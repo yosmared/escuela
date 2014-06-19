@@ -22,9 +22,9 @@ class SchoolYear
     private $id;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="year", type="datetime", nullable=false)
+     * @ORM\Column(name="year", type="string", nullable=false)
      */
     private $year;
 

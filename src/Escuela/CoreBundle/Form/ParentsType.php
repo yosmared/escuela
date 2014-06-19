@@ -14,20 +14,27 @@ class ParentsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+    	$x=array();
+    	$y = 1950;
+    	$z = ($y+100);
+    	for ($i=$y;$i<$z;$i++){
+    		
+    		$x[] = $i;
+    	}
         $builder
             ->add('name')
             ->add('lastname')
             ->add('identification')
-            ->add('nationality')
-            ->add('birthdate')
+            ->add('nationality','choice',array('choices'=>array('VENEZOLANO'=>'VENEZOLANO','EXTRANJERO'=>'EXTRANJERO')))
+            ->add('birthdate','birthday',array('years'=>$x))
             ->add('address')
             ->add('telephone')
-            ->add('gender')
+            ->add('gender','choice',array('choices'=>array('F'=>'FEMENINO','M'=>'MASCULINO')))
             ->add('profession')
             ->add('addressWork')
             ->add('alphabet')
             ->add('representant')
-            ->add('student')
+            //->add('student')
         ;
     }
     

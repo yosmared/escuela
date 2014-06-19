@@ -1,0 +1,154 @@
+
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.name, 'Nombres:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.name) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.name) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.name, {'attr': {'class': 'form-control', 'placeholder': 'Nombres'}}) }}
+    </div>			    
+</div>
+
+{# LastName #}
+<div class="form-group">
+	{{ form_label(form_object.lastname, 'Apellidos:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.lastname) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.lastname) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.lastname, {'attr': {'class': 'form-control', 'placeholder': 'Apellidos'}}) }}
+    </div>			    
+</div>
+
+<div class="form-group">
+	{{ form_label(form_object.nationality, 'Nacionalidad: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.nationality) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.nationality) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.nationality, {'attr': {'class': 'form-control'}}) }}
+    </div>			    
+</div>
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.identification, 'Cédula: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.identification) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.identification) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.identification, {'attr': {'class': 'form-control', 'placeholder': '111111111'}}) }}
+    </div>			    
+</div>
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.gender, 'Sexo: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.gender) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.gender) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.gender,{'attr': {'class': 'form-control'}}) }}
+    </div>			    
+</div>
+
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.birthdate, 'Fecha de Nacimiento: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.birthdate) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.birthdate) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.birthdate) }}
+    </div>			    
+</div>
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.address, 'Dirección: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.address) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.address) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.address,{'attr': {'class': 'form-control', 'placeholder': 'Dirección habitacional'}}) }}
+    </div>			    
+</div>
+
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.telephone, 'Teléfono: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.telephone) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.telephone) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.telephone,{'attr': {'class': 'form-control', 'placeholder': 'Telefono'}}) }}
+    </div>			    
+</div>
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.profession, 'Profesión: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.profession) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.profession) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.profession, {'attr': {'class': 'form-control', 'placeholder': 'Profesión'}}) }}
+    </div>			    
+</div>
+
+<div class="form-group">
+	{{ form_label(form_object.addressWork, 'Dirección de Trabajo: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.addressWork) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.addressWork) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.addressWork, {'attr': {'class': 'form-control', 'placeholder': 'Dirección de trabajo'}}) }}
+    </div>			    
+</div>
+
+<div class="form-group">
+	{{ form_label(form_object.alphabet, 'Alfabeta: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.alphabet) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.alphabet) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.alphabet) }}
+    </div>			    
+</div>
+
+<div class="form-group">
+	{{ form_label(form_object.representant, 'Representante: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.representant) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.representant) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.representant) }}
+    </div>			    
+</div>

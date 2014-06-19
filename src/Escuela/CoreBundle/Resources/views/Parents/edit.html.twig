@@ -1,16 +1,23 @@
-{% extends '::base.html.twig' %}
+{% extends 'EscuelaCommonsBundle:Base:edit-base.html.twig' %}
 
-{% block body -%}
-    <h1>Parents edit</h1>
+{# Page title and heading	 #}
+{% set page_title="Editar Padre ó Madre" %}
 
-    {{ form(edit_form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('parents') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+{% block form_fields %}
+    {% set form_object= edit_form %}
+	{% include 'EscuelaCoreBundle:Parents:new-edit-fields.html.twig' %}    
 {% endblock %}
+
+{% block action_buttons %}
+	{# Si el usuario autenticado tiene permisos para ver... #}
+	{% if (is_granted('VIEW',service)) %}
+		{# ...muestra la lista de usuarios #}
+		{% set cancel_url = path('parents_list') %}
+	{# sino... #}
+	{% else %}
+		{# ...muestra los datos del usuario #}
+    	{% set cancel_url = path('parents_show', {'id': entity.id}) %}
+    	{# tambien se puede usar: path('user_show', {'id': app.user.id}) #}
+	{% endif %}
+	{{ parent() }}
+{% endblock %}	

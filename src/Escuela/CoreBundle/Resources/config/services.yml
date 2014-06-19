@@ -1,6 +1,9 @@
 parameters:
     escuela.base.class: Escuela\CoreBundle\Services\BaseService
     escuela.core.student.class: Escuela\CoreBundle\Services\StudentService
+    escuela.core.employee.class: Escuela\CoreBundle\Services\EmployeeService
+    escuela.core.parents.class: Escuela\CoreBundle\Services\ParentsService
+    escuela.core.institute.class: Escuela\CoreBundle\Services\InstituteService
 
 services:
         
@@ -15,4 +18,31 @@ services:
              
     escuela.core.student:
         class: %escuela.core.student.class%
+        parent: escuela.core.base
+    
+    escuela.core.form.type.employee:
+         class: Escuela\CoreBundle\Form\EmployeeType
+         tags:
+             - { name: form.type, alias: employee }
+                 
+    escuela.core.employee:
+        class: %escuela.core.employee.class%
+        parent: escuela.core.base
+        
+    escuela.core.form.type.parents:
+         class: Escuela\CoreBundle\Form\ParentsType
+         tags:
+             - { name: form.type, alias: parents }
+    
+    escuela.core.parents:
+        class: %escuela.core.parents.class%
+        parent: escuela.core.base
+    
+    escuela.core.form.type.institute:
+         class: Escuela\CoreBundle\Form\InstituteType
+         tags:
+             - { name: form.type, alias: institute }
+        
+    escuela.core.institute:
+        class: %escuela.core.institute.class%
         parent: escuela.core.base

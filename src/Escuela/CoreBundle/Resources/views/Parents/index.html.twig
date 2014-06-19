@@ -1,63 +1,53 @@
-{% extends '::base.html.twig' %}
+{% extends 'EscuelaCommonsBundle:Base:list-base.html.twig' %}
+{% set page_title="Registro de Padres" %}
+{# New create path to be shown outside this template #}
+{% set new_path= path('parents_new') %}
 
-{% block body -%}
-    <h1>Parents list</h1>
+{# New search path to be shown outside this template #}
+{% set search = path('parents_search') %}
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Lastname</th>
-                <th>Identification</th>
-                <th>Nationality</th>
-                <th>Birthdate</th>
-                <th>Address</th>
-                <th>Telephone</th>
-                <th>Gender</th>
-                <th>Profession</th>
-                <th>Addresswork</th>
-                <th>Alphabet</th>
-                <th>Representant</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+{# New create path to be shown outside this template #}
+{#% set deletes_path= path('student_deletes') %#}
+
+{% set list_path= path('parents_list') %}
+
+{% trans_default_domain "lists" %}
+
+{# Add and delete selected actions for entity rol #}
+{% block entity_add_del %}
+{#% if is_granted('CREATE',service) %#}
+	<a class="btn btn-default btn-sm" href="{{ new_path }}"><i class="fa fa-plus"></i> {{ "list.button.add"|trans }}</a>
+{#% endif %#}
+{#% if is_granted('DELETE',service) %#}
+ {{ form_widget(list_form.deleteall_btn, { 'label': 'list.button.delete'|trans, 'attr': {'class': 'btn btn-default btn-sm'}}) }}
+{% endblock %}
+
+{# Fieldnames #}
+{% block entity_fieldnames %}
+	<tr>
+		<td></td>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Cédula</th>
+		<th>Actions</th>
+	</tr>
+{% endblock %}
+
+{% block entity_fields %}
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('parents_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><input name="listelem[]" id="listelem" type="checkbox" value="{{ entity.id }}" /></td>
                 <td>{{ entity.name }}</td>
                 <td>{{ entity.lastname }}</td>
                 <td>{{ entity.identification }}</td>
-                <td>{{ entity.nationality }}</td>
-                <td>{% if entity.birthdate %}{{ entity.birthdate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.address }}</td>
-                <td>{{ entity.telephone }}</td>
-                <td>{{ entity.gender }}</td>
-                <td>{{ entity.profession }}</td>
-                <td>{{ entity.addressWork }}</td>
-                <td>{{ entity.alphabet }}</td>
-                <td>{{ entity.representant }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('parents_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('parents_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
+                <td width="20%">
+                <ul id="action-list">
+                	<li><a href="{{ path('parents_show', { 'id': entity.id }) }}" title="{{ "list.tooltip.detail"|trans }}"><i class="fa fa-eye fa-3 fa-lg"></i></a></li>
+                    <li><a href="{{ path('parents_edit', { 'id': entity.id }) }}" title="{{ "list.tooltip.edit"|trans }}"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>
+                    <li><a href="{{ path('parents_delete', { 'id': entity.id, 'page': current_page }) }}" title="{{ "list.tooltip.delete"|trans }}"><i class="fa fa-times fa-lg"></i></a></li>					
                 </ul>
                 </td>
             </tr>
         {% endfor %}
-        </tbody>
-    </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('parents_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+       
+{% endblock %}
