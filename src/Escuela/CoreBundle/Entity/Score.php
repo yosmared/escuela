@@ -15,28 +15,28 @@ class Score
     /**
      * @var string
      *
-     * @ORM\Column(name="stage_one", type="string", length=45, nullable=true)
+     * @ORM\Column(name="stage_one", type="string", length=1, nullable=true)
      */
     private $stageOne;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="stage_two", type="string", length=45, nullable=true)
+     * @ORM\Column(name="stage_two", type="string", length=1, nullable=true)
      */
     private $stageTwo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="stage_three", type="string", length=45, nullable=true)
+     * @ORM\Column(name="stage_three", type="string", length=1, nullable=true)
      */
     private $stageThree;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="score_final", type="string", length=45, nullable=true)
+     * @ORM\Column(name="score_final", type="string", length=1, nullable=true)
      */
     private $scoreFinal;
 

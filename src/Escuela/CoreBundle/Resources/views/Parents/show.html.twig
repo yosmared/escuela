@@ -69,12 +69,12 @@
 
 {# Edit button url #}
 {% if (is_granted('EDIT',service))%}
-	{% set edit_url= path('parents_edit', { 'id': entity.id }) %}
+	{% set edit_url= path('parents_edit', { 'id': entity.id,'studentid':studentid }) %}
 {% endif %}
 
 {# Back button url #}
 {% if (is_granted('VIEW',service)) %}
-	{% set back_url = path('parents_list') %}
+	{% set back_url = path('parents_list',{'studentid':studentid}) %}
 {% else %}
 	{% set back_url = path('_usermanager_root') %}
 {% endif %}

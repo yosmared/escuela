@@ -23,22 +23,34 @@ class ParentsController extends Controller
     /**
      * Lists all Parents entities.
      *
-     * @Route("/list", name="parents_list")
+     * @Route("/list/{studentid}", name="parents_list")
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
+    public function indexAction($studentid)
+    {	$em = $this->getDoctrine()->getManager();
+    	if($studentid==null){
 
-        $entities = $em->getRepository('EscuelaCoreBundle:Parents')->findAll();
+        	$entities = $em->getRepository('EscuelaCoreBundle:Parents')->findAll();
+        
+    	}else{
+    		$criteria = array("id"=>$studentid);
+    		$student = $em->getRepository('EscuelaCoreBundle:Student')->findOneBy($criteria);
+    		$entities = $student->getParents();
+    	}
 
         return array(
             'entities' => $entities,
         	'list_form'=>$this->createListForm()->createView(),
         	'service'=>'',
+        	'studentid'=>$studentid
         );
     }
+    
+
+    
+    
+    
     /**
      * Creates a new Parents entity.
      *
@@ -48,21 +60,35 @@ class ParentsController extends Controller
      */
     public function createAction(Request $request)
     {
+    	$parent =$request->request->get('escuela_corebundle_parents');
+    	$studentid = $parent['studentid'];
+
         $entity = new Parents();
         $form = $this->createCreateForm($entity);
+        $form->add('studentid','hidden',array('data'=>$studentid,'mapped'=>false));
         $form->handleRequest($request);
-
+        
+		
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+        	
+        	$em = $this->getDoctrine()->getManager();
+ 
             $em->persist($entity);
             $em->flush();
+            
+            $student = $em->getRepository('EscuelaCoreBundle:Student')->find($studentid); //var_dump($student); die;
+             
+            $student->addParent($entity);
+            
+            $em->flush($student);
 
-            return $this->redirect($this->generateUrl('parents_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('parents_show', array('id' => $entity->getId(),'studentid'=>$studentid)));
         }
 
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
+        	'studentid'=>$studentid
         );
     }
 
@@ -88,29 +114,30 @@ class ParentsController extends Controller
     /**
      * Displays a form to create a new Parents entity.
      *
-     * @Route("/new", name="parents_new")
+     * @Route("/new/{studentid}", name="parents_new")
      * @Method("GET")
      * @Template()
      */
-    public function newAction()
+    public function newAction($studentid)
     {
         $entity = new Parents();
         $form   = $this->createCreateForm($entity);
-
+		$form->add('studentid','hidden',array('data'=>$studentid,'mapped'=>false));
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
+        	'studentid'=>$studentid
         );
     }
 
     /**
      * Finds and displays a Parents entity.
      *
-     * @Route("/{id}", name="parents_show")
+     * @Route("/{id}/show/{studentid}", name="parents_show")
      * @Method("GET")
      * @Template()
      */
-    public function showAction($id)
+    public function showAction($id,$studentid)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -120,23 +147,21 @@ class ParentsController extends Controller
             throw $this->createNotFoundException('Unable to find Parents entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
-
         return array(
             'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        	'service'=>''
+        	'service'=>'',
+        	'studentid'=> $studentid
         );
     }
 
     /**
      * Displays a form to edit an existing Parents entity.
      *
-     * @Route("/{id}/edit", name="parents_edit")
+     * @Route("/{id}/edit/{studentid}", name="parents_edit")
      * @Method("GET")
      * @Template()
      */
-    public function editAction($id)
+    public function editAction($id,$studentid)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -147,13 +172,14 @@ class ParentsController extends Controller
         }
 
         $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
+        $editForm->add('studentid','hidden',array('data'=>$studentid,'mapped'=>false));
+
 
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        	'service'=>''
+        	'service'=>'',
+        	'studentid'=>$studentid
         );
     }
 
@@ -184,6 +210,9 @@ class ParentsController extends Controller
      */
     public function updateAction(Request $request, $id)
     {
+    	$parent =$request->request->get('escuela_corebundle_parents');
+    	$studentid = $parent['studentid'];
+    	
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('EscuelaCoreBundle:Parents')->find($id);
@@ -192,46 +221,49 @@ class ParentsController extends Controller
             throw $this->createNotFoundException('Unable to find Parents entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
+        $editForm->add('studentid','hidden',array('data'=>$studentid,'mapped'=>false));
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('parents_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('parents_show', array('id' => $id,'studentid'=>$studentid)));
         }
 
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+        	'service'=>'',
+        	'studentid'=>$studentid
         );
     }
     /**
      * Deletes a Parents entity.
      *
-     * @Route("/{id}", name="parents_delete")
-     * @Method("DELETE")
+     * @Route("/{id}/delete/{studentid}", name="parents_delete")
+     * @Method("GET")
      */
-    public function deleteAction(Request $request, $id)
+    public function deleteAction(Request $request, $id, $studentid)
     {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EscuelaCoreBundle:Parents')->find($id);
-
-            if (!$entity) {
+       	 
+    	
+          $em = $this->getDoctrine()->getManager();
+          $entity = $em->getRepository('EscuelaCoreBundle:Parents')->find($id);
+			
+           if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Parents entity.');
-            }
+           }
+           
+           $student = $em->getRepository('EscuelaCoreBundle:Student')->find($studentid);
+           $student->removeParent($entity);
+           $em->flush($student);
 
-            $em->remove($entity);
-            $em->flush();
-        }
+           $em->remove($entity);
+           $em->flush();
+        
 
-        return $this->redirect($this->generateUrl('parents'));
+        return $this->redirect($this->generateUrl('parents_list',array('studentid'=>$studentid)));
     }
 
     /**
@@ -241,11 +273,11 @@ class ParentsController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm($id)
+    private function createDeleteForm($id,$studentid)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('parents_delete', array('id' => $id)))
-            ->setMethod('DELETE')
+            ->setAction($this->generateUrl('parents_delete', array('id' => $id,'studentid'=>$studentid)))
+            ->setMethod('GET')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;

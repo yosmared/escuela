@@ -1,0 +1,62 @@
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.stageOne, 'Primer Lapso:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.stageOne) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.stageOne) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.stageOne, {'attr': {'class': 'form-control'}}) }}
+    </div>			    
+</div>
+
+{# LastName #}
+<div class="form-group">
+	{{ form_label(form_object.stageTwo, 'Segundo Lapso:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.stageTwo) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.stageTwo) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.stageTwo, {'attr': {'class': 'form-control'}}) }}
+    </div>			    
+</div>
+
+<div class="form-group">
+	{{ form_label(form_object.stageThree, 'Tercer Lapso:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.stageThree) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.stageThree) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.stageThree, {'attr': {'class': 'form-control'}}) }}
+    </div>			    
+</div>
+
+<div class="form-group">
+	{{ form_label(form_object.scoreFinal, 'Nota Final:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.scoreFinal) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.scoreFinal) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.scoreFinal, {'attr': {'class': 'form-control'}}) }}
+    </div>			    
+</div>
+
+<div class="form-group">
+	{{ form_label(form_object.grade, 'Grado:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.grade) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.grade) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.grade, {'attr': {'class': 'form-control'}}) }}
+    </div>			    
+</div>

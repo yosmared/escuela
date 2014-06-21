@@ -12,11 +12,11 @@
 	{# Si el usuario autenticado tiene permisos para ver... #}
 	{% if (is_granted('VIEW',service)) %}
 		{# ...muestra la lista de usuarios #}
-		{% set cancel_url = path('parents_list') %}
+		{% set cancel_url = path('parents_list', {'studentid':studentid}) %}
 	{# sino... #}
 	{% else %}
 		{# ...muestra los datos del usuario #}
-    	{% set cancel_url = path('parents_show', {'id': entity.id}) %}
+    	{% set cancel_url = path('parents_show', {'id': entity.id,'studentid':studentid}) %}
     	{# tambien se puede usar: path('user_show', {'id': app.user.id}) #}
 	{% endif %}
 	{{ parent() }}

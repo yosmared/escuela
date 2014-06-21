@@ -8,9 +8,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Escuela\CoreBundle\Entity\Student;
+use Escuela\CoreBundle\Entity\Score;
 use Escuela\CoreBundle\Form\StudentType;
 use Escuela\UserManagerBundle\Form\ListType;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Escuela\CoreBundle\Form\ScoresType;
 
 /**
  * Student controller.
@@ -296,6 +298,54 @@ class StudentController extends Controller
      * @Template("EscuelaCoreBundle:Student:index.html.twig")
      */
     public function searchAction($phrase = null, $page=null){
+    	
+    	
+    }
+    
+    /**
+     * Get Notas.
+     *
+     * @Route("/notas/{id}", name="student_notas")
+     * @Method("GET")
+     * @Template("EscuelaCoreBundle:Student:scores.html.twig")
+     */
+    public function getNotas($id){
+    	
+    	$entity = new Score();
+    	$form = $this->createScoreForm($entity);
+    	return array('form'=>$form->createView());
+    	
+    }
+    
+    /**
+     * Creates a form to create a Student entity.
+     *
+     * @param Student $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createScoreForm(Score $entity)
+    {
+    	
+    	$form = $this->createForm(new ScoresType(), $entity, array(
+    			'action' => $this->generateUrl('student_create'),
+    			'method' => 'POST',
+    	));
+    
+    	$form->add('submit', 'submit', array('label' => 'Create'));
+    
+    	return $form;
+    }
+    
+    /**
+     * Creates a new Student entity.
+     *
+     * @Route("/notas/save", name="student_create")
+     * @Method("POST")
+     * @Template("EscuelaCoreBundle:Student:new.html.twig")
+     */
+    public function saveNotas(Request $request){
+    	
     	
     	
     }

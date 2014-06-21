@@ -1,14 +1,14 @@
 {% extends 'EscuelaCommonsBundle:Base:new-base.html.twig' %}
 
-{% set page_title="Registrar Padres" %}
+{% set page_title="Registrar notas del alumno" %}
 
 {% block form_fields %}
 	{% set form_object= form %}
-	{% include 'EscuelaCoreBundle:Parents:new-edit-fields.html.twig' %}
+	{% include 'EscuelaCoreBundle:Student:scores-edit-fields.html.twig' %}
 {% endblock %}
 
 {% block action_buttons %}
-	{% set cancel_url= path('parents_list',{'studentid':studentid}) %}
+	{% set cancel_url= path('student_list') %}
 	{{ parent() }}
 {% endblock %}
 

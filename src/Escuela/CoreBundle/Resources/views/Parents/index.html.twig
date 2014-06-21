@@ -1,7 +1,7 @@
 {% extends 'EscuelaCommonsBundle:Base:list-base.html.twig' %}
 {% set page_title="Registro de Padres" %}
 {# New create path to be shown outside this template #}
-{% set new_path= path('parents_new') %}
+{% set new_path= path('parents_new',{'studentid':studentid}) %}
 
 {# New search path to be shown outside this template #}
 {% set search = path('parents_search') %}
@@ -9,17 +9,19 @@
 {# New create path to be shown outside this template #}
 {#% set deletes_path= path('student_deletes') %#}
 
-{% set list_path= path('parents_list') %}
+{% set list_path= path('parents_list',{'studentid':studentid}) %}
 
 {% trans_default_domain "lists" %}
 
 {# Add and delete selected actions for entity rol #}
 {% block entity_add_del %}
 {#% if is_granted('CREATE',service) %#}
+	{% if entities|length<2 %}
 	<a class="btn btn-default btn-sm" href="{{ new_path }}"><i class="fa fa-plus"></i> {{ "list.button.add"|trans }}</a>
+	{% endif %}
 {#% endif %#}
 {#% if is_granted('DELETE',service) %#}
- {{ form_widget(list_form.deleteall_btn, { 'label': 'list.button.delete'|trans, 'attr': {'class': 'btn btn-default btn-sm'}}) }}
+ 
 {% endblock %}
 
 {# Fieldnames #}
@@ -42,9 +44,9 @@
                 <td>{{ entity.identification }}</td>
                 <td width="20%">
                 <ul id="action-list">
-                	<li><a href="{{ path('parents_show', { 'id': entity.id }) }}" title="{{ "list.tooltip.detail"|trans }}"><i class="fa fa-eye fa-3 fa-lg"></i></a></li>
-                    <li><a href="{{ path('parents_edit', { 'id': entity.id }) }}" title="{{ "list.tooltip.edit"|trans }}"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>
-                    <li><a href="{{ path('parents_delete', { 'id': entity.id, 'page': current_page }) }}" title="{{ "list.tooltip.delete"|trans }}"><i class="fa fa-times fa-lg"></i></a></li>					
+                	<li><a href="{{ path('parents_show', { 'id': entity.id,  'studentid': studentid }) }}" title="{{ "list.tooltip.detail"|trans }}"><i class="fa fa-eye fa-3 fa-lg"></i></a></li>
+                    <li><a href="{{ path('parents_edit', { 'id': entity.id, 'studentid': studentid }) }}" title="{{ "list.tooltip.edit"|trans }}"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>
+                    <li><a href="{{ path('parents_delete', { 'id': entity.id, 'studentid': studentid }) }}" title="{{ "list.tooltip.delete"|trans }}"><i class="fa fa-times fa-lg"></i></a></li>					
                 </ul>
                 </td>
             </tr>
