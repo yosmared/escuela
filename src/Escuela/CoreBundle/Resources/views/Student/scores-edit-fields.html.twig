@@ -49,14 +49,14 @@
     </div>			    
 </div>
 
-<div class="form-group">
-	{{ form_label(form_object.grade, 'Grado:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
-    <div class="col-sm-7">
-        {% if form_errors(form_object.grade) %}
-            <div class="alert alert-danger form-validate-small">
-                <small>{{ form_errors(form_object.grade) }}</small>
-            </div>
-        {%  endif %}
-    	{{ form_widget(form_object.grade, {'attr': {'class': 'form-control'}}) }}
-    </div>			    
-</div>
+{# <div class="form-group">#}
+{# 	{{ form_label(form_object.grade, 'Grado:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}#}
+{#     <div class="col-sm-7">#}
+{#         {% if form_errors(form_object.grade) %}#}
+{#             <div class="alert alert-danger form-validate-small">#}
+{#                 <small>{{ form_errors(form_object.grade) }}</small>#}
+{#             </div>#}
+{#         {%  endif %}#}
+{#     	{{ form_widget(form_object.grade, {'attr': {'class': 'form-control'}}) }}#}
+{#     </div>			    #}
+{# </div>#}

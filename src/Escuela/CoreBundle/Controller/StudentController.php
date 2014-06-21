@@ -305,14 +305,23 @@ class StudentController extends Controller
     /**
      * Get Notas.
      *
-     * @Route("/notas/{id}", name="student_notas")
+     * @Route("/score/{id}", name="student_notas")
      * @Method("GET")
      * @Template("EscuelaCoreBundle:Student:scores.html.twig")
      */
-    public function getNotas($id){
+    public function getScoreForm($id){
     	
-    	$entity = new Score();
-    	$form = $this->createScoreForm($entity);
+    	$score = $this->getScore($id);
+    	$bool = false;
+
+    	if(!$score instanceof Score){
+    		
+    		$score = new Score();
+    		$bool=true;
+    		
+    	}
+    	
+    	$form = $this->createScoreForm($score,$bool,$id);
     	return array('form'=>$form->createView());
     	
     }
@@ -324,15 +333,27 @@ class StudentController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createScoreForm(Score $entity)
+    private function createScoreForm(Score $entity,$create=true,$id=null)
     {
+    	if($create){
+    		
+    		$form = $this->createForm(new ScoresType(), $entity, array(
+    				'action' => $this->generateUrl('student_score_create',array('id'=>$id)),
+    				'method' => 'POST',
+    		));
+    		
+    		$form->add('submit', 'submit', array('label' => 'Create'));
+    	}else{
+    		$form = $this->createForm(new ScoresType(), $entity, array(
+    				'action' => $this->generateUrl('student_score_update',array('id'=>$entity->getStudent()->getId())),
+    				'method' => 'PUT',
+    		));
+    		
+    		$form->add('submit', 'submit', array('label' => 'Guardar'));
+    		
+    		
+    	}
     	
-    	$form = $this->createForm(new ScoresType(), $entity, array(
-    			'action' => $this->generateUrl('student_create'),
-    			'method' => 'POST',
-    	));
-    
-    	$form->add('submit', 'submit', array('label' => 'Create'));
     
     	return $form;
     }
@@ -340,13 +361,91 @@ class StudentController extends Controller
     /**
      * Creates a new Student entity.
      *
-     * @Route("/notas/save", name="student_create")
+     * @Route("/{id}/score/save", name="student_score_create")
      * @Method("POST")
      * @Template("EscuelaCoreBundle:Student:new.html.twig")
      */
-    public function saveNotas(Request $request){
+    public function saveScore(Request $request,$id){
+    	
+    	$score = new Score();
+    	$bool = true;
+    	
+    	$em = $this->getDoctrine()->getManager();
+    	$student = $em->getRepository('EscuelaCoreBundle:Student')->find($id);
+    	$grade = $student->getGrade();
+    	
+    	$c=array('current'=>true);
+    	$year = $em->getRepository('EscuelaCoreBundle:SchoolYear')->findOneBy($c);
+
+    	$score->setStudent($student);
+    	$score->setGrade($grade[0]);
+    	$score->setSchoolYear($year);
     	
     	
+    	$editForm = $this->createScoreForm($score,$bool,$id);
+    	$editForm->handleRequest($request);
+    	 
+    	if ($editForm->isValid()) {
+    		
+    		$em = $this->getDoctrine()->getManager();
+    		$em->persist($score);
+    		$em->flush();
+    		 
+    		return $this->redirect($this->generateUrl('student_notas', array('id' => $id)));
+    	}
+    	 
+    	return array(
+    			'entity' => $score,
+    			'form'   => $editForm->createView(),
+    	);
+    	
+    }
+    
+    /**
+     * Creates a new Student entity.
+     *
+     * @Route("/{id}/score/update", name="student_score_update")
+     * @Method("PUT")
+     * @Template("EscuelaCoreBundle:Student:new.html.twig")
+     */
+    public function updateScore(Request $request,$id){
+
+    	$score = $this->getScore($id);
+    	$bool = false;
+    	
+    	$em = $this->getDoctrine()->getManager();
+    	
+    	$editForm = $this->createScoreForm($score,$bool);
+    	$editForm->handleRequest($request);
+    	
+    	if ($editForm->isValid()) {
+    		$em->flush();
+    	
+    		return $this->redirect($this->generateUrl('student_notas', array('id' => $id)));
+    	}
+    	
+    	return array(
+    			'entity' => $entity,
+    			'form'   => $editForm->createView(),
+    	);
+    	 
+    	 
+    }
+    
+    public function getScore($id){
+    	
+    	$em = $this->getDoctrine()->getManager();
+    	
+    	$student = $em->getRepository('EscuelaCoreBundle:Student')->find($id);
+    	
+    	$grade = $student->getGrade();
+    	
+    	$c=array('current'=>true);
+    	$year = $em->getRepository('EscuelaCoreBundle:SchoolYear')->findOneBy($c);
+    	
+    	$criteria= array('grade'=>$grade[0],'student'=>$student,'schoolYear'=>$year);
+    	
+    	return $em->getRepository('EscuelaCoreBundle:Score')->findOneBy($criteria);
     	
     }
 }

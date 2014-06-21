@@ -21,7 +21,7 @@ class InstituteController extends Controller
     /**
      * Lists all Institute entities.
      *
-     * @Route("/", name="institute")
+     * @Route("/list", name="institute_list")
      * @Method("GET")
      * @Template()
      */
@@ -142,12 +142,11 @@ class InstituteController extends Controller
         }
 
         $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
 
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+        	'service'=>''
         );
     }
 
@@ -186,7 +185,7 @@ class InstituteController extends Controller
             throw $this->createNotFoundException('Unable to find Institute entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
+
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
@@ -199,7 +198,7 @@ class InstituteController extends Controller
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'service'=>'',
         );
     }
     /**

@@ -1,0 +1,91 @@
+
+{# Name #}
+{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.codeSchool, 'Código del plantel:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.codeSchool) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.codeSchool) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.codeSchool, {'attr': {'class': 'form-control', 'placeholder': 'Codigo'}}) }}
+    </div>			    
+</div>
+
+{# LastName #}
+<div class="form-group">
+	{{ form_label(form_object.name, 'Nombre del plantel:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.name) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.name) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.name, {'attr': {'class': 'form-control', 'placeholder': 'Apellidos'}}) }}
+    </div>			    
+</div>
+
+<div class="form-group">
+	{{ form_label(form_object.address, 'Dirección: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.address) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.address) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.address, {'attr': {'class': 'form-control'}}) }}
+    </div>			    
+</div>
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.telephone, 'Telefónos: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.telephone) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.telephone) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.telephone, {'attr': {'class': 'form-control', 'placeholder': '111111111'}}) }}
+    </div>			    
+</div>
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.municipality, 'Municipio: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.municipality) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.municipality) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.municipality,{'attr': {'class': 'form-control'}}) }}
+    </div>			    
+</div>
+
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.state, 'Estado Bolívar: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.state) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.state) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.state) }}
+    </div>			    
+</div>
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.numberZone, 'Zona Educativa: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.numberZone) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.numberZone) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.numberZone,{'attr': {'class': 'form-control', 'placeholder': 'Dirección habitacional'}}) }}
+    </div>			    
+</div>
