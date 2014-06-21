@@ -3,7 +3,6 @@ imports:
     - { resource: security.yml }
     - { resource: doctrine_extensions.yml }
     - { resource: knp_paginator.yml }
-    - { resource: knp_snappy.yml }
 
 framework:
     #esi:             ~
