@@ -127,15 +127,15 @@ class InstituteController extends Controller
     /**
      * Displays a form to edit an existing Institute entity.
      *
-     * @Route("/{id}/edit", name="institute_edit")
+     * @Route("/1/edit", name="institute_edit")
      * @Method("GET")
      * @Template()
      */
-    public function editAction($id)
+    public function editAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EscuelaCoreBundle:Institute')->find($id);
+        $entity = $em->getRepository('EscuelaCoreBundle:Institute')->findOneBy(array());
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Institute entity.');
@@ -192,7 +192,7 @@ class InstituteController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('institute_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('institute_edit'));
         }
 
         return array(

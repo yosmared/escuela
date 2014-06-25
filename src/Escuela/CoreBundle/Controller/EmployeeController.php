@@ -9,6 +9,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Escuela\CoreBundle\Entity\Employee;
 use Escuela\CoreBundle\Form\EmployeeType;
+use Escuela\UserManagerBundle\Form\ListType;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
  * Employee controller.
@@ -21,11 +23,11 @@ class EmployeeController extends Controller
     /**
      * Lists all Employee entities.
      *
-     * @Route("/", name="employee")
+     * @Route("/list/{page}", name="employee_list")
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
+    public function indexAction($page=1)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -33,6 +35,8 @@ class EmployeeController extends Controller
 
         return array(
             'entities' => $entities,
+        	'list_form'=>$this->createListForm()->createView(),
+        	'service'=>''
         );
     }
     /**
@@ -102,7 +106,7 @@ class EmployeeController extends Controller
     /**
      * Finds and displays a Employee entity.
      *
-     * @Route("/{id}", name="employee_show")
+     * @Route("/{id}/show", name="employee_show")
      * @Method("GET")
      * @Template()
      */
@@ -243,5 +247,27 @@ class EmployeeController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
+    }
+    
+    public function createListForm() {
+    	$options = array (
+    			'action' => $this->generateUrl('employee_deletes', array(), UrlGeneratorInterface::ABSOLUTE_PATH ),
+    			'method' => 'POST'
+    	);
+    	$form = $this->createForm ( new ListType(), null, $options );
+    	$form->add('deleteall_btn', 'button');
+    	$form->add ( 'submit', 'submit', array ('label' => 'Eliminar') );
+    	return $form;
+    }
+    
+    /**
+     * Deletes a Employee entity.
+     *
+     * @Route("/{id}/deletes", name="employee_deletes")
+     * @Method("GET")
+     */
+    public function deletesAction(Request $request, $id=1)
+    {
+    	
     }
 }
