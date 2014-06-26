@@ -1,15 +1,14 @@
-{% extends '::base.html.twig' %}
+{% extends 'EscuelaCommonsBundle:Base:new-base.html.twig' %}
 
-{% block body -%}
-    <h1>Employee creation</h1>
+{% set page_title="Registrar empleado" %}
 
-    {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('employee') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+{% block form_fields %}
+	{% set form_object= form %}
+	{% include 'EscuelaCoreBundle:Employee:new-edit-fields.html.twig' %}
 {% endblock %}
+
+{% block action_buttons %}
+	{% set cancel_url= path('employee_list') %}
+	{{ parent() }}
+{% endblock %}
+

@@ -1,48 +1,53 @@
-{% extends '::base.html.twig' %}
+{% extends 'EscuelaCommonsBundle:Base:show-base.html.twig' %}
 
-{% block body -%}
-    <h1>Employee</h1>
+{# Page title and heading  #}
+{% set page_title="Detalles del empleado" %}
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ entity.name }}</td>
-            </tr>
-            <tr>
-                <th>Lastname</th>
-                <td>{{ entity.lastname }}</td>
-            </tr>
-            <tr>
-                <th>Identification</th>
-                <td>{{ entity.identification }}</td>
-            </tr>
-            <tr>
-                <th>Gender</th>
-                <td>{{ entity.gender }}</td>
-            </tr>
-            <tr>
-                <th>Director</th>
-                <td>{{ entity.director }}</td>
-            </tr>
-        </tbody>
-    </table>
+{% block entity_details %}
+<div class="row">
+	<div class="col-sm-4"><strong>Nombres:</strong></div>
+	<div class="col-sm-6">{{ entity.name }}</div>
+</div>
+<div class="row">
+	<div class="col-sm-4"><strong>Apellidos:</strong></div>
+	<div class="col-sm-6">{{ entity.lastname }}</div>
+</div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('employee') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('employee_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+<div class="row">
+	<div class="col-sm-4"><strong>Cédula:</strong></div>
+	<div class="col-sm-6">{{ entity.identification }}</div>
+</div>
+<div class="row">
+	<div class="col-sm-4"><strong>Sexo:</strong></div>
+	<div class="col-sm-6">{{ entity.gender }}</div>
+</div>
+<div class="row">
+	<div class="col-sm-4"><strong>Tipo de empleado:</strong></div>
+	<div class="col-sm-6">{{ entity.employeeType.name }}</div>
+</div>
+<div class="row">
+	<div class="col-sm-4"><strong>Grado asignado:</strong></div>
+	<div class="col-sm-6">{{ entity.grade.name }}</div>
+</div>
+<div class="row">
+	<div class="col-sm-4"><strong>Es director:</strong></div>
+	<div class="col-sm-6">{% if entity.director %} {{ " Sí" }} {% else %} {{ "No" }} {% endif %}</div>
+</div>
+
+
+
 {% endblock %}
+
+{# Edit button url #}
+{% if (is_granted('EDIT',service))%}
+	{% set edit_url= path('employee_edit', { 'id': entity.id }) %}
+{% endif %}
+
+{# Back button url #}
+{% if (is_granted('VIEW',service)) %}
+	{% set back_url = path('employee_list') %}
+{% else %}
+	{% set back_url = path('_usermanager_root') %}
+{% endif %}
+
+

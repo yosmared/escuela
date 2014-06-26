@@ -41,6 +41,13 @@ class Student
      * @ORM\Column(name="identification", type="integer", nullable=false)
      */
     private $identification;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gender", type="string",length=1, nullable=false)
+     */
+    private $gender;
 
     /**
      * @var string
@@ -59,7 +66,7 @@ class Student
     /**
      * @var string
      *
-     * @ORM\Column(name="address", type="text", nullable=false)
+     * @ORM\Column(name="address", type="text", nullable=true)
      */
     private $address;
 
@@ -73,7 +80,7 @@ class Student
     /**
      * @var string
      *
-     * @ORM\Column(name="telephone", type="string", length=13, nullable=false)
+     * @ORM\Column(name="telephone", type="string", length=13, nullable=true)
      */
     private $telephone;
 
@@ -250,6 +257,29 @@ class Student
     public function getIdentification()
     {
         return $this->identification;
+    }
+    
+    /**
+     * Set identification
+     *
+     * @param integer $identification
+     * @return Student
+     */
+    public function setGender($gender)
+    {
+    	$this->gender = $gender;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get identification
+     *
+     * @return integer
+     */
+    public function getGender()
+    {
+    	return $this->gender;
     }
 
     /**

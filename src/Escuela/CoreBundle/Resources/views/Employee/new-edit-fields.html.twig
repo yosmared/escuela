@@ -1,0 +1,91 @@
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.name, 'Nombres:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.name) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.name) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.name, {'attr': {'class': 'form-control', 'placeholder': 'Nombres'}}) }}
+    </div>			    
+</div>
+
+{# LastName #}
+<div class="form-group">
+	{{ form_label(form_object.lastname, 'Apellidos:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.lastname) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.lastname) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.lastname, {'attr': {'class': 'form-control', 'placeholder': 'Apellidos'}}) }}
+    </div>			    
+</div>
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.identification, 'Cédula: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.identification) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.identification) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.identification, {'attr': {'class': 'form-control', 'placeholder': '111111111'}}) }}
+    </div>			    
+</div>
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.gender, 'Sexo: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.gender) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.gender) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.gender, {'attr': {'class': 'form-control', 'placeholder': 'Ciudad'}}) }}
+    </div>			    
+</div>
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.director, 'Es director?: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.director) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.director) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.director) }}
+    </div>			    
+</div>
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.employeeType, 'Tipo de empleado: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.employeeType) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.employeeType) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.employeeType) }}
+    </div>			    
+</div>
+
+{# Name #}
+<div class="form-group">
+	{{ form_label(form_object.grade, 'Grado Asignado: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.grade) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.grade) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.grade) }}
+    </div>			    
+</div>

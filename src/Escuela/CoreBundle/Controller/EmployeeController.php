@@ -125,6 +125,7 @@ class EmployeeController extends Controller
         return array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
+        	'service'=>''
         );
     }
 
@@ -152,6 +153,7 @@ class EmployeeController extends Controller
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+        	'service'=>''
         );
     }
 
@@ -190,34 +192,30 @@ class EmployeeController extends Controller
             throw $this->createNotFoundException('Unable to find Employee entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('employee_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('employee_show', array('id' => $id)));
         }
 
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+        	'service'=>''
         );
     }
     /**
      * Deletes a Employee entity.
      *
-     * @Route("/{id}", name="employee_delete")
-     * @Method("DELETE")
+     * @Route("/{id}/{page}", name="employee_delete")
+     * @Method("GET")
      */
-    public function deleteAction(Request $request, $id)
+    public function deleteAction(Request $request, $id,$page=1)
     {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
 
-        if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('EscuelaCoreBundle:Employee')->find($id);
 
@@ -227,9 +225,9 @@ class EmployeeController extends Controller
 
             $em->remove($entity);
             $em->flush();
-        }
+        
 
-        return $this->redirect($this->generateUrl('employee'));
+        return $this->redirect($this->generateUrl('employee_list'));
     }
 
     /**

@@ -18,6 +18,7 @@ class StudentType extends AbstractType
             ->add('name')
             ->add('lastname')
             ->add('identification')
+            ->add('gender','choice',array('choices'=>array('F'=>'FEMENINO','M'=>'MASCULINO')))
             ->add('cityBirth')
             ->add('birthdate','birthday',array('widget'=>'choice'))
             ->add('address')

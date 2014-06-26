@@ -18,11 +18,11 @@ class EmployeeType extends AbstractType
             ->add('name')
             ->add('lastname')
             ->add('identification')
-            ->add('gender')
+            ->add('gender','choice',array('choices'=>array('F'=>'FEMENINO','M'=>'MASCULINO')))
             ->add('director')
-            ->add('employeeType')
-            ->add('grade')
-            ->add('institute')
+            ->add('employeeType','entity',array('class'=>'EscuelaCoreBundle:EmployeeType','property'=>'name'))
+            ->add('grade','entity',array('class'=>'EscuelaCoreBundle:Grade','property'=>'name'))
+            ->add('institute','entity',array('class'=>'EscuelaCoreBundle:Institute','property'=>'name'))
         ;
     }
     

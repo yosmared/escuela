@@ -1,6 +1,5 @@
 
 {# Name #}
-{% trans_default_domain "forms" %}
 <div class="form-group">
 	{{ form_label(form_object.name, 'Nombres:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
     <div class="col-sm-7">
@@ -14,7 +13,6 @@
 </div>
 
 {# LastName #}
-{% trans_default_domain "forms" %}
 <div class="form-group">
 	{{ form_label(form_object.lastname, 'Apellidos:', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
     <div class="col-sm-7">
@@ -28,7 +26,6 @@
 </div>
 
 {# Name #}
-{% trans_default_domain "forms" %}
 <div class="form-group">
 	{{ form_label(form_object.identification, 'Cédula: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
     <div class="col-sm-7">
@@ -42,7 +39,19 @@
 </div>
 
 {# Name #}
-{% trans_default_domain "forms" %}
+<div class="form-group">
+	{{ form_label(form_object.gender, 'Sexo: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
+    <div class="col-sm-7">
+        {% if form_errors(form_object.gender) %}
+            <div class="alert alert-danger form-validate-small">
+                <small>{{ form_errors(form_object.gender) }}</small>
+            </div>
+        {%  endif %}
+    	{{ form_widget(form_object.gender, {'attr': {'class': 'form-control', 'placeholder': '111111111'}}) }}
+    </div>			    
+</div>
+
+{# Name #}
 <div class="form-group">
 	{{ form_label(form_object.cityBirth, 'Ciudad de Nacimiento: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
     <div class="col-sm-7">
@@ -56,7 +65,6 @@
 </div>
 
 {# Name #}
-{% trans_default_domain "forms" %}
 <div class="form-group">
 	{{ form_label(form_object.birthdate, 'Fecha de Nacimiento: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
     <div class="col-sm-7">
@@ -70,7 +78,6 @@
 </div>
 
 {# Name #}
-{% trans_default_domain "forms" %}
 <div class="form-group">
 	{{ form_label(form_object.address, 'Dirección: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
     <div class="col-sm-7">
@@ -84,7 +91,6 @@
 </div>
 
 {# Name #}
-{% trans_default_domain "forms" %}
 <div class="form-group">
 	{{ form_label(form_object.createat, 'Fecha de Ingreso: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
     <div class="col-sm-7">
@@ -98,7 +104,6 @@
 </div>
 
 {# Name #}
-{% trans_default_domain "forms" %}
 <div class="form-group">
 	{{ form_label(form_object.grade, 'Grado a cursar: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
     <div class="col-sm-7">
@@ -112,7 +117,6 @@
 </div>
 
 {# Name #}
-{% trans_default_domain "forms" %}
 <div class="form-group">
 	{{ "Representante: " }}
 	
@@ -120,7 +124,6 @@
 </div>
 
 {# Name #}
-{% trans_default_domain "forms" %}
 <div class="form-group">
 	{{ form_label(form_object.telephone, 'Teléfono: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
     <div class="col-sm-7">
@@ -134,7 +137,6 @@
 </div>
 
 {# Name #}
-{% trans_default_domain "forms" %}
 <div class="form-group">
 	{{ form_label(form_object.schoolOrigin, 'Plantel de procedencia: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
     <div class="col-sm-7">
@@ -147,7 +149,6 @@
     </div>			    
 </div>
 
-{% trans_default_domain "forms" %}
 <div class="form-group">
 	{{ form_label(form_object.viruela, 'Vacunas: ', {'label_attr': {'class': 'col-sm-2 control-label required'}}) }}
     <div class="col-sm-7">
