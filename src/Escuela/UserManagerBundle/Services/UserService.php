@@ -83,7 +83,7 @@ class UserService extends BaseService{
 		
 		// Validations		
 		//Check if any Treatment is checked/set
-		$arr = $this->request->request->get("softclear_usermanager_user");		
+		$arr = $this->request->request->get("escuela_usermanager_user");		
 		if(!array_key_exists('rolesid', $arr)) {
 			$transRoles = $this->translator->trans("user.roles.select",array(),"validators");
 			$form->addError(new FormError($transRoles));
@@ -183,7 +183,7 @@ class UserService extends BaseService{
 			throw new NotFoundHttpException('Unable to find User entity.');
 		}
 
-		$arr = $this->request->request->get("softclear_usermanager_user");
+		$arr = $this->request->request->get("escuela_usermanager_user");
 		$qsecurityRequest = $arr['questionsecurity'];
 		$qsecurityEntity = $entity->getQuestionSecurity()->getId();
 		
