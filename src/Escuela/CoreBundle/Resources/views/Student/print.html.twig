@@ -1,0 +1,49 @@
+{% extends 'EscuelaCoreBundle::print-layout.html.twig' %}
+
+{% block content %}
+
+<div class="col-md-12 center-block"><img src="{{ asset('bundles/commons/images/header.png') }}" class="img-responsive" /></div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="row">
+<div class="col-md-2"></div> 
+<div class="col-md-8"><h2 class="form-signin-heading title"><strong style="text-align: center;">Constancia de Estudio</strong></h2></div>
+<div class="col-md-2"></div> 
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<div class="row">
+
+<div class="col-md-12">
+<p class="text-left" id="text1">Quien suscribe <strong>Lcdo(a). {{ director.name|upper~' '~director.lastname|upper }}</strong>, Directora de la Unidad Educativa Bolivariana “Dr. Manuel Salvador Gómez”, 
+con sede en el Municipio General Manuel Cedeño del Estado Bolívar,  
+hace  constar  a  través  de  la  presente que el  (la) alumno (a): <strong>{{ student.name|upper~' '~student.lastname|upper }}</strong>, 
+Titular de la Cedula de Identidad Nro. <strong>{{ student.identification }}</strong>, Edad  <strong>{{ ago }}</strong> años, Natural de <strong>{{ student.cityBirth|upper }}</strong>, cursa el <strong>{{ student.grade[0].name }}</strong>  Grado durante el Año Escolar 
+<strong>{{ year.year~'-'~(year.year+1) }}</strong>
+</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="row">
+<div class="col-md-12">
+<p class="text-left" id="text2">Constancia que se expide a solicitud de parte interesada en Caicara del Orinoco, a los {{ "now"|date('d') }} días del mes {{ "now"|date('m') }} de {{ "now"|date('Y') }}.-</p>
+</div>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="row">
+<div class="col-md-8">
+<p class="text-center" id="firma"><strong>Lcda. Janet González</strong></p>
+<p class="text-center" id="cargo"><strong>Directora (e)</strong></p>
+</div>
+<div class="col-md-4" id="sello">
+<p class="text-center"><strong>Sello</strong></p>
+<p class="text-center">&nbsp;</p>
+
+</div>
+</div>
+{% endblock %}

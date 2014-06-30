@@ -448,4 +448,39 @@ class StudentController extends Controller
     	return $em->getRepository('EscuelaCoreBundle:Score')->findOneBy($criteria);
     	
     }
+    
+    /**
+     * Creates a new Student entity.
+     *
+     * @Route("/{id}/constancy", name="student_print")
+     * @Method("GET")
+     * @Template("EscuelaCoreBundle:Student:print.html.twig")
+     */
+    public function printAction($id){
+    	
+    	$em = $this->getDoctrine()->getManager();
+    	
+    	
+    	$student = $em->getRepository('EscuelaCoreBundle:Student')->find($id);
+    	
+    	$c=array('current'=>true);
+    	$year = $em->getRepository('EscuelaCoreBundle:SchoolYear')->findOneBy($c);
+    	
+    	$y=array('director'=>true);
+    	$director = $em->getRepository('EscuelaCoreBundle:Employee')->findOneBy($y);
+    	
+    	$ago = $this->calculateAgo(date('Y-m-d',$student->getBirthdate()->getTimestamp()));
+    	
+    	return array(
+    			'director'=>$director,
+    			'ago'=>$ago,
+    			'year'=>$year,
+    			'student'=>$student,
+    	);
+    }
+    
+    private function calculateAgo($fecha){
+	    list($Y,$m,$d) = explode("-",$fecha);
+	    return( date("md") < $m.$d ? date("Y")-$Y-1 : date("Y")-$Y );
+	}
 }

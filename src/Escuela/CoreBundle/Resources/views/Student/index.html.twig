@@ -47,6 +47,7 @@
                     <li><a href="{{ path('student_edit', { 'id': entity.id }) }}" title="{{ "list.tooltip.edit"|trans }}"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>
                     <li><a href="{{ path('parents_list', { 'studentid': entity.id}) }}" title="{{ "Padres"|trans }}"><i class="fa fa-users fa-lg"></i></a></li>
                     <li><a href="{{ path('student_notas', { 'id': entity.id}) }}" title="{{ "Calificaciones"|trans }}"><i class="fa fa-info fa-lg"></i></a></li>
+                    <li><a href="{{ path('student_print', { 'id': entity.id}) }}" title="{{ "Constancia de estudio"|trans }}" target="_blank" ><i class="fa fa-print fa-lg" ></i></a></li>
                 </ul>
                 </td>
             </tr>
