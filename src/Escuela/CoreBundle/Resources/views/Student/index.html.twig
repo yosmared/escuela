@@ -4,13 +4,14 @@
 {% set new_path= path('student_new') %}
 
 {# New search path to be shown outside this template #}
-{% set search = path('student_search') %}
+{#% set search = path('student_search') %#}
 
 {# New create path to be shown outside this template #}
 {#% set deletes_path= path('student_deletes') %#}
 
 {% set list_path= path('student_list') %}
-
+{% block entity_search %}
+{% endblock %}
 {% trans_default_domain "lists" %}
 
 {# Add and delete selected actions for entity rol #}
