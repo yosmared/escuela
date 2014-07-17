@@ -1,0 +1,19 @@
+{
+	"name": "clevis/mysql-dump",
+	"description": "MySQL database dump.",
+	"keywords": ["mysql"],
+	"license": ["BSD-3-Clause"],
+	"authors": [
+		{
+			"name": "David Grudl",
+			"homepage": "http://davidgrudl.com"
+		},
+		{
+			"name": "Clevis s.r.o.",
+			"homepage": "http://clevis.cz"
+		}
+	],
+	"autoload": {
+		"classmap": ["src/"]
+	}
+}
